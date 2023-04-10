@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react_project/static/css/main.95cd6c29.css",
+    "main.css": "/react_project/static/css/main.37361091.css",
     "main.js": "/react_project/static/js/main.7573dc60.js",
     "static/media/music_pad.png": "/react_project/static/media/music_pad.71b03191832245e95211.png",
     "index.html": "/react_project/index.html",
     "static/media/logo.svg": "/react_project/static/media/logo.dc139be73b700aa6da56f57eee2e4cbe.svg",
-    "main.95cd6c29.css.map": "/react_project/static/css/main.95cd6c29.css.map",
+    "main.37361091.css.map": "/react_project/static/css/main.37361091.css.map",
     "main.7573dc60.js.map": "/react_project/static/js/main.7573dc60.js.map"
   },
   "entrypoints": [
-    "static/css/main.95cd6c29.css",
+    "static/css/main.37361091.css",
     "static/js/main.7573dc60.js"
   ]
 }
