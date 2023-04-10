@@ -1,19 +1,21 @@
 import './css/Header.css';
+import lupa from './images/lupa.svg';
 function Header() {
   return (
     <div className="header">
       <div className='UpPanel'>
         <div className='ButtonAutorization'>
-          <button>
-            <p className = "SingUp">Sing up</p>
-          </button>
-          <button>
+          
+          <a className='Singup' href="Sing_up">Sing up</a>
+          
+          <button className='Log_in_botton'>
             <p className='LogIn'>LogIn</p>
           </button>
         </div>
         <div className='SearchString'>
-          <img src="images/logo.jpg" alt="BigCo Inc. logo"/>
-          
+          <button className='Lupa_button'>
+            <img className='Lupa' src={lupa} alt="Search logo" />
+          </button>
         </div>
       </div>
     </div>
