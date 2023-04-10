@@ -6,6 +6,6 @@
 }
 @media (max-width: 502px) {
     .main_body{
-        grid-template-columns:20% 80%;
+        grid-template-columns:25% 75%;
     }
 }

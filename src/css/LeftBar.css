@@ -1,10 +1,14 @@
-
-.left_bar{
-    padding-top: 41px;
+.logo{
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 1000px;
+}
+.left_bar{
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 2000px;
     background: rgba(0, 0, 0, 0.1);
 }
 .logo_img{
@@ -34,11 +38,17 @@ li{
     font-family: 'NTR';
     font-style: normal;
     font-weight: 400;
-    font-size:calc(6px + 1vw);
+    font-size:calc(8px + 1vw);
     color: #FFFFFF;
     text-decoration: none;
 }
 .link:hover{
     background: #ffffff;
     color: #1E1E1E;
+}
+@media (max-width: 502px) {
+    .logo_img{
+        width: 60%;
+
+    }
 }
