@@ -7,30 +7,34 @@
     min-height: 1000px;
     background: rgba(0, 0, 0, 0.1);
 }
+.logo_img{
+    width: 100%;
+    min-width: 10px;
+}
 .logo_name{
     margin: 0;
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
+    font-size:calc(4px + 0.4vw);
     line-height: 18px;
     color: #FFFFFF;
     text-align: center;
     text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.67);
 }
-ul{
-    margin-top: 45px;
+ul{ 
+    padding-left: 20%;
+    margin-top: 20%;
     list-style: none;
 }
 li{
-    margin-top: 15px;
+    margin-top: 10%;
 }
 .link{
     font-family: 'NTR';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 51px;
+    font-size:calc(6px + 1vw);
     color: #FFFFFF;
     text-decoration: none;
 }
