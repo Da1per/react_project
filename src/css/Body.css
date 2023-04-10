@@ -1,0 +1,5 @@
+.main_body{
+    background: #1E1E1E;
+    display: grid;
+    grid-template-columns:15% 85%;
+}

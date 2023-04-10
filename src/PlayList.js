@@ -1,7 +1,7 @@
 import './css/PlayList.css';
 function PlayList() {
     return (
-      <div className="App">
+      <div className="playList">
 
       </div>
     );

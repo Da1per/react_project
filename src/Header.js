@@ -1,7 +1,7 @@
 import './css/Header.css';
 function Header() {
   return (
-    <div className="App">
+    <div className="header">
       <div className='UpPanel'>
         <div className='ButtonAutorization'>
           <button>
