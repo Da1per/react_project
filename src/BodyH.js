@@ -2,7 +2,9 @@ import './css/BodyH.css';
 import PlayList from './PlayList';
 import MusicPlayer from './MusicPlayer';
 import musicPad from './images/music_pad.png'
-function BodyH() {
+import React from 'react';
+class BodyH extends React.Component {
+  render(){
     return (
       <div className="body_h">
           <div className='body_h_header'>
@@ -15,5 +17,5 @@ function BodyH() {
       </div>
     );
   }
-  
+}
   export default BodyH;

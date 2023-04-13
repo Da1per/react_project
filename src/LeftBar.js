@@ -1,6 +1,8 @@
 import './css/LeftBar.css';
 import logo_site from'./images/logo.svg';
-function LeftBar() {
+import React from 'react';
+class LeftBar extends React.Component {
+  render(){
     return (
       <div className="left_bar">
         <a className='logo' href='#'>
@@ -17,5 +19,6 @@ function LeftBar() {
       </div>
     );
   }
+}
   
   export default LeftBar;

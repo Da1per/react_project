@@ -1,10 +1,12 @@
 import './css/MusicPlayer.css';
-function MusicPlayer() {
+import React from 'react';
+class MusicPlayer extends React.Component {
+  render(){
     return (
       <div className="App">
 
       </div>
     );
   }
-  
+}
   export default MusicPlayer;

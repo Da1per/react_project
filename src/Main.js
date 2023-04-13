@@ -1,7 +1,9 @@
 import './css/Main.css';
 import Header from './Header';
 import Body from './Body';
-function Main() {
+import React from 'react';
+class Main extends React.Component {
+  render(){
   return (
     <div className="main">
       <Header/>
@@ -9,5 +11,5 @@ function Main() {
     </div>
   );
 }
-
+}
 export default Main;
