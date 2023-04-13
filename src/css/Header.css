@@ -1,63 +1,49 @@
 .UpPanel {
-    height: 64px;
-    width: 1920;
+    display: flex;
+    max-height: 20px;
+    padding: 2% 5% 2% 4%;
+    justify-content: space-between;
+    align-items: center;
     background-color:#363636;
 }
-
 .Singup {
-    font-size: 120%;
+    font-size: calc(8px + 0.7vw);
     color: aliceblue;
-    text-decoration: none;
-   
-    
-   
-    
+    text-decoration: none; 
+    width: calc(30px + 3vw);
 }
-
 .Singup:hover {
     color: #5f5f5f;
     opacity: .2;
 }
-
-.UpPanel{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: center;
-    align-items: stretch;
-}
-
 .ButtonAutorization{
-    
-    margin-left: 4%;
-
+    display: flex;
+    align-items: center;
 }
-
-.SearchString{
-    margin-right: 8%;
-}
-
 .Lupa_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     color: black;
     border: 3px solid #4718AB;
-    border-radius: 31px 31px 31px 31px;
-    width: 50px;
-    height: 29px;
-    margin-left: 100%;
+    border-radius: calc(5px + 3vw);
+    width: calc(20px + 3vw);
+    height: calc(15px + 2vw);
+    max-width: 50px;
+    max-height: 40px;
 }
-
 .Log_in_botton {
-    position: relative;
+    margin-left: 2%;
     background-color: #ffffff;
     border: 3px solid #4718AB;
-    border-radius: 31px 31px 31px 31px;
-    font-size: 60%;
+    border-radius: calc(5px + 3vw);
+    font-size: calc(8px + 0.7vw);
     color: #000000;
-    padding: 0.1%;
-    width: 10% ;
-    
+    max-width: 118px;
+    max-height: 40px;
+    width:  calc(40px + 2vw) ;
+    height: calc(10px + 4vw);
     text-align: center;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -65,42 +51,30 @@
     overflow: hidden;
     cursor: pointer;
     font-family: Quantico ;
- 
 }
-
 .Log_in_botton:after {
-    content: "";
+     /* content: "";
     background: #f1f1f1;
     display: block;
-    position: absolute;
-    padding-top: 300%;
+     position: absolute; 
+     padding-top: 300%;
     padding-left: 350%;
     margin-left: -20px !important;
     margin-top: -120%;
     opacity: 0;
-    transition: all 0.8s
-
+    transition: all 0.8s  */
 }
-
 .Log_in_botton:active:after {
-    padding: 0;
-    margin: 0;
+    /* padding: 0;
+    margin: 0; */
     opacity: 1;
     transition: 0s
 }
-
 .Log_in_botton:hover {
     background-color: #4718AB;
     color:#ffffff ;
 }
-
 .Lupa {
-    display: flex;
-    
-    
+     width: calc(5px + 1vw);
 }
 
-.LogIn {
-    font-size: 170%;
-   
-}

@@ -3,7 +3,6 @@
 }
 .playlist_header{
     display:flex;
-    margin-bottom: 2%;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch
@@ -14,15 +13,17 @@
 }
 .playlist_header .link{
     max-height: 50px;
+    cursor: pointer;
 }
-.playlist_header_h1{
+.playlist_header_h2{
+    display: block;
     margin-right: 2%;
-    max-width: 350px;
-    width: calc(10px + 25vw);
+    max-width: 400px;
+    width: calc(100px + 35vw);
     font-family: 'Lexend Zetta';
     font-style: normal;
     font-weight: 600;
-    font-size: calc(8px + 0.8vw);
+    font-size: calc(4px + 1.2vw);
     color: #FFFFFF;
 }
 .playlist_header_block{
@@ -35,20 +36,22 @@
     max-width: 100%;
     min-width: 100px;
     width: 100%;
-    box-shadow: 0px 20px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
     background: linear-gradient(to right, rgba(212, 0, 0, 0.56), rgba(255, 255, 255, 0.096));
 }
 .playlist_list{
     display: grid;
-    padding-left: 2%;
     justify-content: space-evenly;
-    grid-template-columns: 5% 5% 5% 5% 5% 7%;
-    grid-gap: 2vw;
+    grid-template-columns: 12% 12% 12% 12% 12% 12%;
+    grid-gap: 2%;
 }
 .playlist_list_block{
     /* width: 198.27px;
     height: 225.03px; */
-    margin:0 1% 1% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 2% 15% 0;
     max-width:198px;
 	min-width:50px;
     min-height: 50px;
@@ -56,4 +59,28 @@
     width: calc(10px + 10vw);
     height: calc(10px + 12vw);
     background: rgba(74, 74, 74, 0.29);
+}
+.playlist_button{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: calc(2px + 3vw);
+    height: calc(2px + 3vw);
+    border-radius: 100%;
+    background: rgba(255, 162, 22, 0.493);
+    filter: blur(1px);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+}
+.playlist_button::before{
+    content: "";
+    display: block;
+    margin-left: 8%;
+    border-top: calc(2px + 0.4vw) solid transparent;
+    border-left: calc(2px + 0.8vw) solid #ffffff;
+    border-bottom: calc(2px + 0.4vw) solid transparent;
+}
+.playlist_button:active {
+    background: rgba(168, 103, 6, 0.493);
 }

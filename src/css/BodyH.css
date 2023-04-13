@@ -1,4 +1,7 @@
 .body_h{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     padding: 12% 0 0 2%;
 }
 .body_h_header{

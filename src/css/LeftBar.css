@@ -1,7 +1,9 @@
 .logo{
     display: flex;
+    width: calc(15px + 5vw);
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .left_bar{
     padding-top: 10%;
@@ -20,7 +22,7 @@
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 600;
-    font-size:calc(4px + 0.4vw);
+    font-size:calc(2px + 0.5vw);
     line-height: 18px;
     color: #FFFFFF;
     text-align: center;
@@ -38,7 +40,7 @@ li{
     font-family: 'NTR';
     font-style: normal;
     font-weight: 400;
-    font-size:calc(8px + 1vw);
+    font-size:calc(6px + 1vw);
     color: #FFFFFF;
     text-decoration: none;
 }
