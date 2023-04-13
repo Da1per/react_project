@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 .left_bar{
     padding-top: 10%;
@@ -27,6 +28,7 @@
     color: #FFFFFF;
     text-align: center;
     text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.67);
+    
 }
 ul{ 
     padding-left: 20%;
