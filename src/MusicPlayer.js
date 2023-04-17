@@ -1,17 +1,26 @@
 import './css/MusicPlayer.css';
 import React from 'react';
-class MusicPlayer extends React.Component {
-  render(){
-    return (
-      <div className="App">
-        <div className='container'>
-          <div className='player'>
-           
-            
-              <div className='controls'>
-                <div><i class="fa-solid fa-backward fa-xl"></i></div>
-                <div><i class="fa-solid fa-play fa-beat-fade fa-2xl"></i></div>
-                <div><i class="fa-solid fa-forward fa-xl"></i></div>
+
+
+ import { useEffect, useState } from "react";
+import useSound from "use-sound";
+import qala from "./music/sound1.wav";
+import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
+import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
+import { IconContext } from "react-icons";
+
+ function MusicPlayer() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [time, setTime] = useState({
+    min: "",
+    sec: ""
+  });
+  const [currTime, setCurrTime] = useState({
+    min: "",
+    sec: ""
+  });
+
+  const [seconds, setSeconds] = useState();
 
   const [play, { pause, duration, sound }] = useSound(qala);
 
@@ -38,7 +47,7 @@ class MusicPlayer extends React.Component {
           sec
         });
       }
-    }, 1000);
+    }, 100);
     return () => clearInterval(interval);
   }, [sound]);
 
@@ -53,26 +62,65 @@ class MusicPlayer extends React.Component {
   };
 
   return (
-    <div className="component">
-      <h2>Playing Now</h2>
-      <img className="musicCover" src="" />
-      <div>
-        <h3 className="title">Drum&boost</h3>
-        <p className="subTitle">orex47</p>
+    <div className="player">
+      <div className='player_buttons'>
+        <button className="music_paly_button">
+          <IconContext.Provider value={{ size: "calc(5px + 4vw)", color: "#f0f0f0" }}>
+            <BiSkipPrevious />
+          </IconContext.Provider>
+        </button>
+        {!isPlaying ? (
+          <button className="music_paly_button" onClick={playingButton}>
+            <IconContext.Provider value={{ size: "calc(5px + 4vw)", color: "#f0f0f0" }}>
+              <AiFillPlayCircle />
+            </IconContext.Provider>
+          </button>
+        ) : (
+          <button className="music_paly_button" onClick={playingButton}>
+            <IconContext.Provider value={{ size: "calc(5px + 4vw)", color: "#f0f0f0" }}>
+              <AiFillPauseCircle />
+            </IconContext.Provider>
+          </button>
+        )}
+        <button className="music_paly_button">
+          <IconContext.Provider value={{ size: "calc(5px + 4vw)", color: "#f0f0f0" }}>
+            <BiSkipNext />
+          </IconContext.Provider>
+        </button>
       </div>
-      <div>
-        <div className="time">
-          <p>
-            {currTime.min}:{currTime.sec}
-          </p>
-          <p>
-            {time.min}:{time.sec}
-          </p>
+      <div className='palyer_bar'>
+        <div className='player_name'>
+          <h2 className="player_title">Drum Loop</h2>
+          <p className="player_artist">Orex47</p>
         </div>
-
+        <div className='player_status'>
+        <input
+            type="range"
+            min="0"
+            step='0.01'
+            max={duration / 1000}
+            default="0"
+            
+            value={seconds}
+            className="player_status_timeline"
+            onChange={(e) => {
+              sound.seek([e.target.value]);
+            }}
+          />
+          <div className="player_time">
+            <p className='player_time_value'>
+              {currTime.min}:{currTime.sec}
+            </p>
+            <p className='player_time_value'>
+              {time.min}:{time.sec}
+            </p>
+          </div>
+        </div>
       </div>
+      
+      
     </div>
   );
 }
-
-  export default MusicPlayer;
+ 
+export default MusicPlayer;

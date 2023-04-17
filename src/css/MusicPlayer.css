@@ -1,75 +1,64 @@
 .player {
     display: flex;
-    width: 700px;
-	height: 120px;
-	background: #FFA216;
+    justify-content: space-between;
+    padding: 1%;
+    width: calc(100px + 30vw);
+	height: calc(30px + 5vw);
+	background: #cf7d02;
     opacity: .8;
     border-radius: 50px;
     align-content: center;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
 }
 
-#progress {
-    -webkit-appearance: none;
-    width: 50%;
-    height: 5%;
-    margin-top: 9%;
-    background: rgb(255, 255, 255);
-    border-radius: 7px;
-    cursor: pointer;
-
-}
-#progress::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background:rgb(252, 252, 252);
-    width: 5%;
-    
-    border-radius: 50%;
-    border: 8px solid #a85cbe;
-    box-shadow: 0 5px 5px rgba(226, 225, 225, 0.22);
-    
+.player_status_timeline{
+    color: #ffffff;
+    width: calc(50px + 17vw);
+    height: 1px;
+    margin: 0;
 }
 
-.controls {
+.music_paly_button{
+    background: #fdfdfd00;;
+    border-radius: 25%;
+    border: none;
+}
+.player_status{
+
+}
+.palyer_bar{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    color: aliceblue;
-   
 }
-
-.controls div{
-    width: 40px;
-    height: 40px;
-    margin: 10px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #a85cbe;;
-    border-radius: 50%;
-    color: #ffffffd2;
-    box-shadow: 0 10px 20px rgba(226, 225, 225, 0.22);
-    cursor: pointer;
+.player_time{
+    display: flex;
+    justify-content: space-around;
+}    
+.player_name{
+    width: calc(30px + 17vw);
+    justify-content: space-around;
+    display: flex;
+    align-items: baseline
 }
-
-.img_track {
-    width: 2%;
-	height: 60px;
-	background: rgb(0, 0, 0);
-   margin-top: 4%;
-   
-    
+.player_title{
+    margin-right: 10%;
+    font-size: calc(5px + 1.2vw);
+    color: #f0f0f0;
+    margin: 0;
 }
-
-.controls div:nth-child(2){
-    transform: scale(1.5);
-    background-color: #0000006b;
-    border: 2px solid #a85cbe;;
-    
-    
-   
+.player_artist{
+    font-size: calc(5px + 0.8vw);
+    color: #f0f0f0;
+    margin: 0;
 }
-    
-    
-
+.player_buttons{
+    display: flex;
+}
+.player_time_value{
+    color: #f0f0f0;
+    font-weight: 700;
+    font-size:calc(5px + 0.6vw) ;
+    margin: 0;
+}
