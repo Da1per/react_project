@@ -61,15 +61,14 @@
     background: rgba(74, 74, 74, 0.29);
 }
 .playlist_button{
-    position: absolute;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: calc(2px + 3vw);
     height: calc(2px + 3vw);
     border-radius: 100%;
+    border: none;
     background: rgba(255, 162, 22, 0.493);
-    filter: blur(1px);
     backdrop-filter: blur(1px);
     cursor: pointer;
 }
