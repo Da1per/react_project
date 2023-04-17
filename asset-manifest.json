@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react_project/static/css/main.2f617055.css",
-    "main.js": "/react_project/static/js/main.a665f781.js",
+    "main.css": "/react_project/static/css/main.5bcea7b3.css",
+    "main.js": "/react_project/static/js/main.f3a819df.js",
     "static/media/music_pad.png": "/react_project/static/media/music_pad.71b03191832245e95211.png",
     "index.html": "/react_project/index.html",
     "static/media/lupa.svg": "/react_project/static/media/lupa.b97b2a7ac042db6092efc57544a27245.svg",
     "static/media/logo.svg": "/react_project/static/media/logo.dc139be73b700aa6da56f57eee2e4cbe.svg",
-    "main.2f617055.css.map": "/react_project/static/css/main.2f617055.css.map",
-    "main.a665f781.js.map": "/react_project/static/js/main.a665f781.js.map"
+    "main.5bcea7b3.css.map": "/react_project/static/css/main.5bcea7b3.css.map",
+    "main.f3a819df.js.map": "/react_project/static/js/main.f3a819df.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f617055.css",
-    "static/js/main.a665f781.js"
+    "static/css/main.5bcea7b3.css",
+    "static/js/main.f3a819df.js"
   ]
 }
