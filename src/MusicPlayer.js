@@ -1,5 +1,6 @@
 import './css/MusicPlayer.css';
 import React from 'react';
+         
 class MusicPlayer extends React.Component {
   render(){
     return (
@@ -10,7 +11,7 @@ class MusicPlayer extends React.Component {
             
               <div className='controls'>
                 <div><i class="fa-solid fa-backward fa-xl"></i></div>
-                <div><i class="fa-solid fa-play fa-beat-fade fa-2xl"></i></div>
+                <div><i class="fa-solid fa-play  fa-2xl"></i></div>
                 <div><i class="fa-solid fa-forward fa-xl"></i></div>
 
               </div>
@@ -22,6 +23,9 @@ class MusicPlayer extends React.Component {
             
           </div>
         </div>
+       
+          
+        
 
       </div>
     );

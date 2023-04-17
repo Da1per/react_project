@@ -35,26 +35,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
     color: aliceblue;
    
 }
 
 .controls div{
-    width: 25px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin: 10px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    background: #a85cbe;;
+    border-radius: 50%;
+    color: #ffffffd2;
+    box-shadow: 0 10px 20px rgba(226, 225, 225, 0.22);
     cursor: pointer;
 }
 
 .img_track {
-    width: 10%;
+    width: 2%;
 	height: 60px;
 	background: rgb(0, 0, 0);
    margin-top: 4%;
    
     
 }
+
+.controls div:nth-child(2){
+    transform: scale(1.5);
+    background-color: #0000006b;
+    border: 2px solid #a85cbe;;
+    
+    
+   
+}
+    
+    
+
