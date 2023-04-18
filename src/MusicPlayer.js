@@ -4,7 +4,7 @@ import React from 'react';
 
  import { useEffect, useState } from "react";
 import useSound from "use-sound";
-import qala from "./music/sound1.wav";
+import qala from "./music/utyutut_6.mp3";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
@@ -64,26 +64,27 @@ import { IconContext } from "react-icons";
   return (
     <div className="player">
       <div className='player_buttons'>
-        <button className="music_paly_button">
-          <IconContext.Provider value={{ size: "calc(5px + 4vw)", color: "#f0f0f0" }}>
+        <button className="music_paly_button_1">
+          <IconContext.Provider value={{ size: "calc(5px + 1.5vw)", color: "#f0f0f0" }}>
             <BiSkipPrevious />
           </IconContext.Provider>
         </button>
         {!isPlaying ? (
-          <button className="music_paly_button" onClick={playingButton}>
-            <IconContext.Provider value={{ size: "calc(5px + 4vw)", color: "#f0f0f0" }}>
-              <AiFillPlayCircle />
-            </IconContext.Provider>
+          <button className="music_paly_button_3" onClick={playingButton}>
+            <div className='music_paly_button_3_treug'>
+              <i class="fa-solid fa-play fa-2xl"></i>
+            </div>
+            
           </button>
         ) : (
-          <button className="music_paly_button" onClick={playingButton}>
-            <IconContext.Provider value={{ size: "calc(5px + 4vw)", color: "#f0f0f0" }}>
-              <AiFillPauseCircle />
-            </IconContext.Provider>
+          <button className="music_paly_button_2" onClick={playingButton}>
+            <div className='music_paly_button_2_stop'>
+            <i class="fa-solid fa-pause fa-spin fa-2xl"></i>
+            </div>
           </button>
         )}
-        <button className="music_paly_button">
-          <IconContext.Provider value={{ size: "calc(5px + 4vw)", color: "#f0f0f0" }}>
+        <button className="music_paly_button_1">
+          <IconContext.Provider value={{ size: "calc(5px + 1.5vw)", color: "#f0f0f0" }}>
             <BiSkipNext />
           </IconContext.Provider>
         </button>
@@ -109,10 +110,10 @@ import { IconContext } from "react-icons";
           />
           <div className="player_time">
             <p className='player_time_value'>
-              {currTime.min}:{currTime.sec}
+              {currTime.min}:{(currTime.sec>=0 && currTime.sec<10)? `0${currTime.sec}`: currTime.sec}
             </p>
             <p className='player_time_value'>
-              {time.min}:{time.sec}
+              {time.min}:{(time.sec>=0 && time.sec<10)? `0${time.sec}`: time.sec}
             </p>
           </div>
         </div>
