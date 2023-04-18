@@ -11,10 +11,10 @@ class LeftBar extends React.Component {
         </a>
         <ul>
           <li><a className='link' href='#'>GENRES</a></li>
-          <li><a className='link' href='#'>GENRES</a></li>
+          <li><a className='link' href='#'>NEW TRACKS</a></li>
           <li><a className='link' href='#'>TOP TRACKS</a></li>
           <li><a className='link' href='#'>TOP ARTIST</a></li>
-          <li><a className='link' href='#'>PODCAST</a></li>
+          <li><a className='link ' href='#'>PODCAST</a></li>
         </ul>
       </div>
     );
