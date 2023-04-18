@@ -1,28 +1,92 @@
 .player {
     display: flex;
-    justify-content: space-between;
+    
     padding: 1%;
-    width: calc(100px + 30vw);
-	height: calc(30px + 5vw);
+    width: calc(100px + 25vw);
+	height: calc(30px + 2.5vw);
 	background: #cf7d02;
-    opacity: .8;
+    opacity: .7;
     border-radius: 50px;
     align-content: center;
     flex-wrap: nowrap;
+    position: fixed;
+    right: 0;
+    bottom: 0;
 }
 
 .player_status_timeline{
     color: #ffffff;
-    width: calc(50px + 17vw);
-    height: 1px;
+    width: calc(50px + 10vw);
+    height: 3px;
     margin: 0;
+    
 }
 
-.music_paly_button{
-    background: #fdfdfd00;;
-    border-radius: 25%;
+.music_paly_button_1{
+    background: #030000c5;;
+    border-radius: 50%;
     border: none;
+    height: calc(5px + 2vw);
+    width: calc(5px + 2vw);
 }
+
+.music_paly_button_2{
+    background: #f7f7f793;
+    border-radius: 50% ;
+    
+    height: calc(5px + 4.5vw);
+    width: calc(5px + 4.5vw);
+
+    -webkit-box-shadow: 0px 0px 43px -5px rgba(245, 239, 239, 0.68);
+-moz-box-shadow: 0px 0px 43px -5px rgba(174, 56, 204, 0.68);
+box-shadow: 0px 0px 43px -5px rgba(190, 49, 190, 0.68);
+
+-webkit-transition: All 0.2s ease;
+-moz-transition: All 0.2s ease;
+-o-transition: All 0.2s ease;
+-ms-transition: All 0.2s ease;
+transition: All 0.2s ease;
+}
+
+.music_paly_button_2_stop{
+   
+   
+    
+    
+}
+
+
+.music_paly_button_3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: #f7f7f793;
+    border-radius: 50% ;
+    
+    height: calc(5px + 4vw);
+    width: calc(5px + 4vw);
+
+    -webkit-box-shadow: 0px 0px 43px -5px rgba(0, 0, 0, 0.68);
+-moz-box-shadow: 0px 0px 43px -5px rgba(0, 0, 0, 0.68);
+box-shadow: 0px 0px 43px -5px rgba(0, 0, 0, 0.68);
+    
+
+-webkit-transition: All 0.2s ease;
+-moz-transition: All 0.2s ease;
+-o-transition: All 0.2s ease;
+-ms-transition: All 0.2s ease;
+transition: All 0.2s ease;
+}
+
+.music_paly_button_3_treug{
+    
+    
+    margin-left: 6%;
+    
+    
+}
+
 .player_status{
 
 }
@@ -34,7 +98,7 @@
 }
 .player_time{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }    
 .player_name{
     width: calc(30px + 17vw);
@@ -55,10 +119,12 @@
 }
 .player_buttons{
     display: flex;
+    align-items: center;
+    
 }
 .player_time_value{
     color: #f0f0f0;
     font-weight: 700;
-    font-size:calc(5px + 0.6vw) ;
+    font-size:calc(5px + 0.4vw) ;
     margin: 0;
 }
