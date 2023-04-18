@@ -7,7 +7,7 @@ import New_artist from './New_artist'
 import Top_tracks from './Top_tracks'
 import New_tracks from './New_tracks'
 import Podcast from './Podcast'
-
+import MusicPlayer from './MusicPlayer';
 class Body extends React.Component {
   constructor(props) {
     super(props);
@@ -73,7 +73,7 @@ class Body extends React.Component {
         {(this.state.stat=='Top_tracks')?<Top_tracks/>:null}
         {(this.state.stat=='Podcast')?<Podcast/>:null}
         {(this.state.stat=='New_tracks')?<New_tracks/>:null}
-
+        <MusicPlayer/>
       </div>
     );
 }

@@ -1,6 +1,5 @@
 import './css/BodyH.css';
 import PlayList from './PlayList';
-import MusicPlayer from './MusicPlayer';
 import musicPad from './images/music_pad.png'
 import React from 'react';
 class BodyH extends React.Component {
@@ -13,7 +12,7 @@ class BodyH extends React.Component {
           </div>
           <PlayList name={'NOW LISTENING'} num={12}/>
           <PlayList name={'DESERT PLAYLISTS'} num={12}/>
-          <MusicPlayer/>
+
       </div>
     );
   }
