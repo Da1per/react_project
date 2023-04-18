@@ -39,6 +39,8 @@ li{
     margin-top: 10%;
 }
 .link{
+    background: #00000000;
+    border: none;
     font-family: 'NTR';
     font-style: normal;
     font-weight: 400;
