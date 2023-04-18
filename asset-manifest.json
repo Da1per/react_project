@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react_project/static/css/main.97813cf1.css",
-    "main.js": "/react_project/static/js/main.12e987e5.js",
+    "main.js": "/react_project/static/js/main.31aabbb0.js",
     "static/js/845.d21fc75c.chunk.js": "/react_project/static/js/845.d21fc75c.chunk.js",
     "static/media/utyutut_6.mp3": "/react_project/static/media/utyutut_6.d2d930ea0a5360262cf5.mp3",
     "static/media/music_pad.png": "/react_project/static/media/music_pad.71b03191832245e95211.png",
@@ -9,11 +9,11 @@
     "static/media/lupa.svg": "/react_project/static/media/lupa.b97b2a7ac042db6092efc57544a27245.svg",
     "static/media/logo.svg": "/react_project/static/media/logo.dc139be73b700aa6da56f57eee2e4cbe.svg",
     "main.97813cf1.css.map": "/react_project/static/css/main.97813cf1.css.map",
-    "main.12e987e5.js.map": "/react_project/static/js/main.12e987e5.js.map",
+    "main.31aabbb0.js.map": "/react_project/static/js/main.31aabbb0.js.map",
     "845.d21fc75c.chunk.js.map": "/react_project/static/js/845.d21fc75c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.97813cf1.css",
-    "static/js/main.12e987e5.js"
+    "static/js/main.31aabbb0.js"
   ]
 }
