@@ -47,7 +47,7 @@ import { IconContext } from "react-icons";
           sec
         });
       }
-    }, 100);
+    }, 20);
     return () => clearInterval(interval);
   }, [sound]);
 
