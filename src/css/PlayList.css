@@ -83,3 +83,22 @@
 .playlist_button:active {
     background: rgba(168, 103, 6, 0.493);
 }
+@media (max-width: 502px) {
+    .playlist_list{
+        grid-template-columns: 12% 12% 12% 12% ;
+    }
+    .playlist_list_block{
+        max-width:198px;
+        min-width:25px;
+        min-height: 25px;
+        max-height: 225px;
+        width: calc(10px + 17vw);
+        height: calc(15px + 22vw);
+    }
+    .playlist_header_h2{
+        font-size: calc(4px + 3vw);
+    }
+    .playlist_header .link{
+        font-size: calc(4px + 3vw);
+    }
+}

@@ -78,3 +78,12 @@
      width: calc(5px + 1vw);
 }
 
+@media (max-width: 502px) {
+    .Singup {
+        font-size: calc(8px + 1.3vw);
+        width: calc(30px + 5vw);
+    }
+    .Log_in_botton {
+        font-size: calc(8px + 1.2vw);
+    }
+}

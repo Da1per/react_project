@@ -34,18 +34,22 @@ h1{
 
 @media (max-width: 502px) {
     .body_h{
+        margin-top: 10%;
         padding: 28% 0 0 2%;
+        
     }
     .body_h_header{
         flex-direction: column-reverse;
         justify-content: normal;
-        align-items: normal;
+        align-items: center;
     }
     .body_h_img{
         width: 100%;
         min-width: 180px;
     }
-    h1{
+    h1{ 
+        justify-content: center;
+        font-size:calc(10px + 8vw);
         width: 100%;
     }
 }

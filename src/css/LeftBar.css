@@ -11,7 +11,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 2000px;
     background: rgba(0, 0, 0, 0.1);
 }
 .logo_img{
@@ -53,8 +52,27 @@ li{
     color: #1E1E1E;
 }
 @media (max-width: 502px) {
+    .left_bar{
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 2%;
+    }
+    .link{
+        font-size:calc(4px + 2vw);
+    }
     .logo_img{
         width: 60%;
+    }
+    .left_bar_links{
+        margin: 0;
+        display: flex;
+    }
+    ul{ 
+        padding-left: 0;}
 
+    li{
+        display: block;
+        margin-top: 0%;
+       
     }
 }
