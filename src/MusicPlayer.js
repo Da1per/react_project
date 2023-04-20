@@ -9,6 +9,8 @@ import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
 
+
+
 const playList = [{
   name_Track: "Orex47-Judas(original mix)",
   creator: "Orex47",
@@ -130,7 +132,7 @@ name_Track: "Orex47- Get riz",
     min: "",
     sec: ""
   });
-
+  console.log(qala)
   const [seconds, setSeconds] = useState();
 
   const [play, { pause, duration, sound }] = useSound(qala);
