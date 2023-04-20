@@ -12,9 +12,9 @@
 }
 .pop_up_body{
     padding: 1% 5% 5% 5%;
-    height: 400px;
-    width: 250px;
-    border-radius: 5%;
+    height: calc(200px + 30vw);;
+    width: calc(100px + 30vw);;
+    border-radius: calc(5px + 3vw);;
     background: #5a5959ad;
 }
 .pop_up_form{
@@ -22,13 +22,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    height: 90%;
 }
 
 .pop_up_input_label{
-    font-family: 'NTR';
+    font-family: 'Varela Round', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size:calc(8px + 1.3vw);
+    font-size:calc(12px + 2vw);
     color: #FFFFFF;
     text-align: center;
     text-decoration: none;
@@ -37,18 +38,23 @@
     margin-bottom: 10%;
     border-radius: 10px;
     padding: 3%;
-    font-size: 20px;
-    height: 30px;
+    font-size: calc(5px + 2vw);;
+    height: calc(5px + 2vw);;
     width: 100%;
 }
 .pop_up_input_button{
-    margin-top: 15%;
-    height: 40px;
-    width: 60%;
-    border-radius: 10px;
-    font-size: 22px;
+    height: calc(5px + 3vw);
+    width: calc(5px + 10vw);
+    border-radius: calc(5px + 3vw);;
+    font-size: calc(5px + 2vw);;
 }
 .pop_up_x{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #ffffff00;
     border-radius: 100%;
+    font-size: calc(5px + 2vw);;
+    height: calc(10px + 2vw);;
+    width: calc(10px + 2vw);;
 }

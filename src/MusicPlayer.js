@@ -1,13 +1,12 @@
 import './css/MusicPlayer.css';
 import React from 'react';
-
-
  import { useEffect, useState } from "react";
 import useSound from "use-sound";
-import qala from "./music/utyutut_6.mp3";
+import qala from "./music/utyutut_6.mp3"
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
+console.log(qala)
 
  function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);

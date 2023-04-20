@@ -40,7 +40,7 @@ li{
 .link{
     background: #00000000;
     border: none;
-    font-family: 'NTR';
+    font-family: 'Varela Round', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size:calc(6px + 1vw);

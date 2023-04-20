@@ -7,6 +7,8 @@
     background-color:#363636;
 }
 .Singup {
+    background: #00000000;
+    border: none;
     font-size: calc(8px + 0.7vw);
     color: aliceblue;
     text-decoration: none; 
