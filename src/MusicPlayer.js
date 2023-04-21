@@ -2,13 +2,16 @@ import './css/MusicPlayer.css';
 import React from 'react';
  import { useEffect, useState } from "react";
 import useSound from "use-sound";
-import qala from "./music/utyutut_6.mp3";
+import qala from "./music/Orex47- Get riz.mp3";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
-console.log(qala)
 
+function importAll(r) {
+  return r.keys().map(r);
+}
 
+const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
 
 const playList = [{
   name_Track: "Orex47-Judas(original mix)",
@@ -131,10 +134,9 @@ name_Track: "Orex47- Get riz",
     min: "",
     sec: ""
   });
-  console.log(qala)
   const [seconds, setSeconds] = useState();
 
-  const [play, { pause, duration, sound }] = useSound(qala);
+  const [play, { pause, duration, sound }] = useSound(musics[3]);
 
   useEffect(() => {
     if (duration) {
