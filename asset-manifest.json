@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react_project/static/css/main.4b6bbb53.css",
-    "main.js": "/react_project/static/js/main.10bf0b0e.js",
+    "main.css": "/react_project/static/css/main.b4b1e938.css",
+    "main.js": "/react_project/static/js/main.a5c00612.js",
     "static/js/845.d21fc75c.chunk.js": "/react_project/static/js/845.d21fc75c.chunk.js",
     "static/media/Orex47-Judas(original mix).mp3": "/react_project/static/media/Orex47-Judas(original mix).d2d930ea0a5360262cf5.mp3",
     "static/media/Orex47-Down.mp3": "/react_project/static/media/Orex47-Down.5beb799471bc9765f9bf.mp3",
@@ -19,12 +19,12 @@
     "index.html": "/react_project/index.html",
     "static/media/lupa.svg": "/react_project/static/media/lupa.b97b2a7ac042db6092efc57544a27245.svg",
     "static/media/logo.svg": "/react_project/static/media/logo.dc139be73b700aa6da56f57eee2e4cbe.svg",
-    "main.4b6bbb53.css.map": "/react_project/static/css/main.4b6bbb53.css.map",
-    "main.10bf0b0e.js.map": "/react_project/static/js/main.10bf0b0e.js.map",
+    "main.b4b1e938.css.map": "/react_project/static/css/main.b4b1e938.css.map",
+    "main.a5c00612.js.map": "/react_project/static/js/main.a5c00612.js.map",
     "845.d21fc75c.chunk.js.map": "/react_project/static/js/845.d21fc75c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b6bbb53.css",
-    "static/js/main.10bf0b0e.js"
+    "static/css/main.b4b1e938.css",
+    "static/js/main.a5c00612.js"
   ]
 }
