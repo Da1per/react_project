@@ -2,7 +2,7 @@
     padding-right: 7%;
     background: #1E1E1E;
     display: grid;
-    grid-template-columns:15% 85%;
+    grid-template-columns:23% 75%;
 }
 @media (max-width: 502px) {
     .main_body{

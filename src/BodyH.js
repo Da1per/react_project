@@ -12,7 +12,6 @@ class BodyH extends React.Component {
           </div>
           <PlayList name={'NOW LISTENING'} num={12}/>
           <PlayList name={'DESERT PLAYLISTS'} num={12}/>
-
       </div>
     );
   }

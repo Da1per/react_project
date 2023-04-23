@@ -14,7 +14,5 @@ const AuthMod =({active,but})=> {
                 </div>
             </div>
         ):null
-         
     }
-
   export default AuthMod;

@@ -8,7 +8,7 @@ import Top_tracks from './Top_tracks'
 import New_tracks from './New_tracks'
 import Podcast from './Podcast'
 import MusicPlayer from './MusicPlayer';
-import { useEffect, useState } from "react";
+import {useState } from "react";
 function Body() {
   const [activeTabs, setActiveTabs] = useState({
     tab:"BodyH",
@@ -17,13 +17,7 @@ let stat2=''
   const activeBbut=(stat)=>{
     stat2=stat
     setActiveTabs({tab:stat2})
-    console.log(stat2)
   }
-  useEffect(() => {
-    if(stat2){
-      setActiveTabs({tab:stat2})
-    }
-  })
   return (
     <div className="main_body">
       <LeftBar  setActive={activeBbut}/>

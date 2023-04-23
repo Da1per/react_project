@@ -26,7 +26,7 @@ h1{
     text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.74);
     }
 .body_h_img{
-    width: 350%;
+    width: calc(20px + 200vw);
     min-width: 180px;
 }
 
