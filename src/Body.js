@@ -13,21 +13,35 @@ function Body() {
   const [activeTabs, setActiveTabs] = useState({
     tab:"BodyH",
   });
-let stat2=''
+  const [musicsList, setMusicsList] = useState({
+    musicsL:'',
+  });
+  const [currentMusic, setCurrentMusic] = useState({
+    musics:'',
+  });
+  const [openMus, setOpenMus] = useState({
+    open:'',
+  });
   const activeBbut=(stat)=>{
-    stat2=stat
-    setActiveTabs({tab:stat2})
+    setActiveTabs({tab:stat})
   }
+  const activeMusicList=(ml)=>{
+    setMusicsList({musicsL:ml})
+  }
+  const activeCurMus=(cm)=>{
+    setCurrentMusic({musics:cm})
+  }
+  
   return (
     <div className="main_body">
       <LeftBar  setActive={activeBbut}/>
-      {(activeTabs.tab=="BodyH")?<BodyH/>:null}
+      {(activeTabs.tab=="BodyH")?<BodyH musicsFor={musicsList.musicsL} musciNow={activeCurMus}/>:null}
       {(activeTabs.tab=="Generes")?<Generes/>:null}
       {(activeTabs.tab=="New_artist")?<New_artist/>:null}
       {(activeTabs.tab=="Top_tracks")?<Top_tracks/>:null}
       {(activeTabs.tab=="Podcast")?<Podcast/>:null}
       {(activeTabs.tab=="New_tracks")?<New_tracks/>:null}
-      <MusicPlayer/>
+      <MusicPlayer musciNowFor={currentMusic.musics} setMus={activeMusicList} openMus={setOpenMus}/>
     </div>
   );
 }

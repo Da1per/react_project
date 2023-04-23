@@ -49,6 +49,8 @@
     /* width: 198.27px;
     height: 225.03px; */
     display: flex;
+    color:#FFFFFF;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin:0 2% 15% 0;
@@ -83,6 +85,10 @@
 .playlist_button:active {
     background: rgba(168, 103, 6, 0.493);
 }
+.playlist_list_block_mus{
+    font-size: calc(4px + 0.7vw);
+}
+
 @media (max-width: 502px) {
     .playlist_list{
         grid-template-columns: 15% 15% 15% ;
@@ -116,5 +122,8 @@
         border-top: calc(2px + 0.8vw) solid transparent;
         border-left: calc(2px + 1.6vw) solid #ffffff;
         border-bottom: calc(2px + 0.8vw) solid transparent;
+    }
+    .playlist_list_block_mus{
+        font-size: calc(4px + 2vw);
     }
 }
