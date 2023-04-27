@@ -9,7 +9,7 @@ function BodyH ({musicsFor,musciNow}) {
           <h1>Your music is here</h1>
           <img className='body_h_img' src={musicPad} alt='music img' ></img>
         </div>
-        <PlayList name={'NOW LISTENING'} num={musicsFor} musSet={musciNow}/>
+        <PlayList name={'NOW LISTENING'}  musSet={musciNow}/>
         <PlayList name={'DESERT PLAYLISTS'} num={12}/>
     </div>
   );

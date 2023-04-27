@@ -68,13 +68,14 @@
     align-items: center;
     width: calc(2px + 3vw);
     height: calc(2px + 3vw);
+    color: #FFFFFF;
     border-radius: 100%;
     border: none;
-    background: rgba(255, 162, 22, 0.493);
+    background: #ffa21600;
     backdrop-filter: blur(1px);
     cursor: pointer;
 }
-.playlist_button::before{
+/* .playlist_button::before{
     content: "";
     display: block;
     margin-left: 8%;
@@ -84,7 +85,7 @@
 }
 .playlist_button:active {
     background: rgba(168, 103, 6, 0.493);
-}
+} */
 .playlist_list_block_mus{
     font-size: calc(4px + 0.7vw);
 }
