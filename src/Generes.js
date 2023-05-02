@@ -1,4 +1,4 @@
-import './css/Generes.css';
+import './css/Generes.sass';
 const Generes =()=> {
         return (
             <div >

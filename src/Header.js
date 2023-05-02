@@ -1,4 +1,4 @@
-import './css/Header.css';
+import './css/Header.sass';
 import lupa from './images/lupa.svg'
 import AuthMod from './AuthMod';
 import RegMod from './RegMod';

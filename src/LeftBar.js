@@ -1,4 +1,4 @@
-import './css/LeftBar.css';
+import './css/LeftBar.sass';
 import logo_site from'./images/logo.svg';
 import React from 'react';
 const LeftBar =({setActive})=> {

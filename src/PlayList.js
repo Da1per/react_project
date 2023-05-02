@@ -1,4 +1,4 @@
-import './css/PlayList.css';
+import './css/PlayList.sass';
 import { useEffect, useState } from "react";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { IconContext } from "react-icons";
@@ -117,15 +117,16 @@ name_Track: "Orex47- Get riz",
 
 function PlayList({name,musSet}) {
   let el=[]
-  const [currSus, setCurrSus] = useState(false);
+  const [currSus, setCurrSus] = useState(true);
   const [currNum, setCurrNum] = useState();
   const add=(l)=>{
     if(currSus){
       setCurrSus(false)
     }
     else setCurrSus(true)
-    musSet([playList[l].src,playList[l].name_Track,playList[l].creator,currSus])
+    musSet([playList[l].src,playList[l].name_Track,playList[l].creator,true,setCurrSus])
     setCurrNum(l)
+    console.log(currSus)
   }
   for(let i=0;i<playList.length;i++){
     el.push(
@@ -133,11 +134,11 @@ function PlayList({name,musSet}) {
       <h3 className='playlist_list_block_mus'>{playList[i].name_Track}</h3>
       <p className='playlist_list_block_mus'>{playList[i].duration_fix}</p>
       <button key={i} onClick={(e) => {add(i)}} className='playlist_button'>
-      {(currSus && currNum==i )? (
-            <IconContext.Provider value={{ size: "calc(5px + 3vw)", color: "#ffa2167e" }}>
+      {(!currSus && currNum==i )? (
+            <IconContext.Provider value={{ size: "calc(10px + 3vw)", color: "#ffa2167e" }}>
               <AiFillPauseCircle />
             </IconContext.Provider>):(
-            <IconContext.Provider value={{ size: "calc(5px + 3vw)", color: "#ffa2167e" }}>
+            <IconContext.Provider value={{ size: "calc(10px + 3vw)", color: "#ffa2167e" }}>
               <AiFillPlayCircle />
             </IconContext.Provider>)
           }

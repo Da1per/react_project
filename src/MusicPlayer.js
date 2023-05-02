@@ -1,4 +1,4 @@
-import './css/MusicPlayer.css';
+import './css/MusicPlayer.sass';
 import React from 'react';
  import { useEffect, useState } from "react";
 import useSound from "use-sound";
@@ -6,11 +6,10 @@ import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
 
-/* function importAll(r) {
+function importAll(r) {
   return r.keys().map(r);
 }
-const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/)); */
-
+const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
  function MusicPlayer({musciNowFor}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [time, setTime] = useState({
@@ -26,11 +25,13 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/)); */
   let musNowAc="/react_project/static/media/Orex47-Judas(original mix).d2d930ea0a5360262cf5.mp3"
   let nameMus="Orex47-Judas(original mix)"
   let nameAut="Orex47"
+  let nameSus1 =''
 
   if(musciNowFor){
     musNowAc=musciNowFor[0]
     nameMus=musciNowFor[1]
     nameAut=musciNowFor[2]
+    nameSus1=musciNowFor[3]
   }
 
   const [play, { pause, duration, sound }] = useSound(musNowAc);

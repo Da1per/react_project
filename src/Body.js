@@ -1,4 +1,4 @@
-import './css/Body.css';
+import './css/Body.sass';
 import LeftBar from './LeftBar';
 import BodyH from './BodyH';
 import React from 'react';

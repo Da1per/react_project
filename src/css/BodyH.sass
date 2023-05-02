@@ -1,0 +1,50 @@
+.body_h
+    display: flex
+    flex-direction: column
+    width: 100%
+    padding: 12% 0 0 2%
+
+.body_h_header
+    min-height: 20px
+    max-height: 40px
+    height: 16%
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+
+h1
+    max-width: 1710px
+    min-width: 80px
+    width: 140%
+    font-family: 'Roboto Condensed'
+    font-style: normal
+    font-weight: 400
+    font-size: calc(10px + 3vw)
+    display: flex
+    align-items: center
+    color: #FFFFFF
+    text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.74)
+    
+.body_h_img
+    width: calc(20px + 200vw)
+    min-width: 180px
+
+@media (max-width: 502px) 
+    .body_h
+        margin-top: 10%
+        padding: 28% 0 0 2%
+        
+    
+    .body_h_header
+        flex-direction: column-reverse
+        justify-content: normal
+        align-items: center
+    
+    .body_h_img
+        width: 100%
+        min-width: 180px
+    
+    h1
+        justify-content: center
+        font-size: calc(10px + 8vw)
+        width: 100%

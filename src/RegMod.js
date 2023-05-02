@@ -1,4 +1,4 @@
-import './css/AuthMod.css';
+import './css/AuthMod.sass';
 const RegMod =({active1,but1})=> {
         return (active1)?(
             <div className="pop_up" onClick={but1}>
