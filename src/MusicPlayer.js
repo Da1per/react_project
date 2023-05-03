@@ -72,6 +72,8 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
       setIsPlaying(true);
     }
   };
+
+  
   
   useEffect(() => {
     if(musciNowFor[3]){
@@ -91,9 +93,7 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
 
   return (
     <div className="player">
-      <input  min="0" max="1" value={volume}  step={0.02} default="1" type="range"  onChange={event => {
-            setVolume(event.target.valueAsNumber) 
-          }}></input>
+      
       <div className='player_buttons'>
         <button className="music_paly_button_1">
           <IconContext.Provider value={{ size: "calc(5px + 1.5vw)", color: "#f0f0f0" }}>
@@ -152,6 +152,22 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
             </p>
           </div>
         </div>
+        <div className='volume_control'>
+        
+        <input  
+            min="0" 
+            max="1" 
+            value={volume}  
+            step={0.02} 
+            default="1" 
+            type="range"  
+            className="player_volume"
+            onChange={event => {
+              setVolume(event.target.valueAsNumber) 
+          }}></input>
+          
+        
+      </div>
       </div>
     </div>
   );
