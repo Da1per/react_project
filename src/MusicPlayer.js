@@ -33,8 +33,8 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
     nameAut=musciNowFor[2]
     nameSus1=musciNowFor[3]
   }
-
-  const [play, { pause, duration, sound }] = useSound(musNowAc);
+  const [volume, setVolume] = React.useState(1);
+  const [play, { pause, duration, sound }] = useSound(musNowAc,{volume});
   
   useEffect(() => {
     if (duration) {
@@ -72,7 +72,7 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
       setIsPlaying(true);
     }
   };
-
+  
   useEffect(() => {
     if(musciNowFor[3]){
       if(isPlaying){
@@ -91,6 +91,9 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
 
   return (
     <div className="player">
+      <input  min="0" max="1" value={volume}  step={0.02} default="1" type="range"  onChange={event => {
+            setVolume(event.target.valueAsNumber) 
+          }}></input>
       <div className='player_buttons'>
         <button className="music_paly_button_1">
           <IconContext.Provider value={{ size: "calc(5px + 1.5vw)", color: "#f0f0f0" }}>
@@ -119,8 +122,12 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
       </div>
       <div className='palyer_bar'>
         <div className='player_name'>
-          <h2 className="player_title">{nameMus}</h2>
-          <p className="player_artist">{nameAut}</p>
+          <div className='player_fastString'>
+          
+             <h2 className="player_title" >{nameMus}</h2>
+             
+          
+          </div>
         </div>
         <div className='player_status'>
         <input
