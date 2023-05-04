@@ -93,7 +93,7 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
   })
 
   return (
-    <div className="player" onMouseLeave={()=>{volumeButtonSet(false)}}>
+    <div className="player" >
       
       <div className='player_buttons'>
         <button className="music_paly_button_1">
@@ -153,9 +153,9 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
             </p>
           </div>
         </div>
-        <div className='volume_control'>
+        <div className='volume_control' onMouseLeave={()=>{volumeButtonSet(false)}}>
         <button className='volume_control_button' onMouseEnter={() => {volumeButtonSet(true)}}>
-            o
+        <i class="fa-solid fa-volume-low fa-2xl"></i>
           </button>
         {(volumeButton)?(<input  
             min="0" 
