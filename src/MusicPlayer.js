@@ -27,13 +27,19 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
   let nameMus="Orex47-Judas(original mix)"
   let nameAut="Orex47"
   let nameSus1 =''
+  let nameSus2 =''
 
   if(musciNowFor){
     musNowAc=musciNowFor[0]
     nameMus=musciNowFor[1]
     nameAut=musciNowFor[2]
     nameSus1=musciNowFor[3]
+    nameSus2=musciNowFor[4]
   }
+
+  const [sus, setSus] = useState();
+
+
   const [volume, setVolume] = React.useState(1);
   const [play, { pause, duration, sound }] = useSound(musNowAc,{volume});
   
@@ -67,10 +73,12 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
   const playingButton = () => {
     if (isPlaying) {
       pause();
+      nameSus2(true)
       setIsPlaying(false);
     } else {
       play();
       setIsPlaying(true);
+      nameSus2(false)
     }
   };
 
@@ -82,13 +90,21 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
         setTimeout(() => { 
           playingButton()
         },500);  
+        setSus(true)
       }
       else{
         setTimeout(() => { 
-          playingButton()
+          /* playingButton() */
+          setSus(true)
         },500); 
       }
       musciNowFor[3]=false
+      if(sus){
+        playingButton()
+        setSus(false)
+      }
+    
+      console.log(sus)
     }
   })
 
