@@ -11,6 +11,7 @@ function importAll(r) {
 }
 const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
  function MusicPlayer({musciNowFor}) {
+  const [volumeButton, volumeButtonSet] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [time, setTime] = useState({
     min: "",
@@ -153,8 +154,10 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
           </div>
         </div>
         <div className='volume_control'>
-        
-        <input  
+        <button className='volume_control_button' onMouseEnter={() => {(volumeButton)? volumeButtonSet(false):volumeButtonSet(true)}}>
+            o
+          </button>
+        {(volumeButton)?(<input  
             min="0" 
             max="1" 
             value={volume}  
@@ -164,7 +167,9 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
             className="player_volume"
             onChange={event => {
               setVolume(event.target.valueAsNumber) 
-          }}></input>
+          }}></input>):null}
+          
+        
           
         
       </div>
