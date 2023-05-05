@@ -10,7 +10,20 @@ function importAll(r) {
   return r.keys().map(r);
 }
 const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
+
+
+
+
+let curMus='/react_project/static/media/Orex47-Judas(original mix).d2d930ea0a5360262cf5.mp3'
+let newMus=''
+
+
+
+
  function MusicPlayer({musciNowFor}) {
+     newMus=musciNowFor[0]
+     
+     
   const [volumeButton, volumeButtonSet] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [time, setTime] = useState({
@@ -23,25 +36,32 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
   });
   const [seconds, setSeconds] = useState();
 
-  let musNowAc="/react_project/static/media/Orex47-Judas(original mix).d2d930ea0a5360262cf5.mp3"
+ 
   let nameMus="Orex47-Judas(original mix)"
   let nameAut="Orex47"
   let nameSus1 =''
   let nameSus2 =''
-
-  if(musciNowFor){
-    musNowAc=musciNowFor[0]
+/*
+  if(musciNowFor[0]==curMus){
+    curMus=musciNowFor[0]
     nameMus=musciNowFor[1]
     nameAut=musciNowFor[2]
     nameSus1=musciNowFor[3]
     nameSus2=musciNowFor[4]
   }
-
+*/
+    nameSus1=musciNowFor[3]
+    nameSus2=musciNowFor[4]
   const [sus, setSus] = useState();
 
 
+
+
   const [volume, setVolume] = React.useState(1);
-  const [play, { pause, duration, sound }] = useSound(musNowAc,{volume});
+  const [play, { pause, duration, sound }] = useSound(curMus,{volume});
+  
+  
+  
   
   useEffect(() => {
     if (duration) {
@@ -81,9 +101,27 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
       nameSus2(false)
     }
   };
+useEffect(() => {
+    if(nameSus1){
+        playingButton()
+        
+    }
+    else{
+        pause()
+        setIsPlaying(false)
+    }
+},[nameSus1])
 
-  
-  
+useEffect(() => {
+
+    if(newMus!=curMus){
+        pause()
+        setIsPlaying(false)
+        curMus=newMus
+        
+        
+}},[nameSus1])
+  /*
   useEffect(() => {
     if(nameSus1){
       if(isPlaying){
@@ -94,7 +132,7 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
       }
       else{
         setTimeout(() => { 
-          /* playingButton() */
+           playingButton() 
           setSus(true)
         },500); 
       }
@@ -107,7 +145,7 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
       console.log(sus)
     }
   },[nameSus1])
-
+*/
   return (
     <div className="player" >
       
