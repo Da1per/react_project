@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react_project/static/css/main.73fb4eab.css",
-    "main.js": "/react_project/static/js/main.fb2cc431.js",
+    "main.js": "/react_project/static/js/main.be4a1ee5.js",
     "static/js/845.d21fc75c.chunk.js": "/react_project/static/js/845.d21fc75c.chunk.js",
     "static/media/Orex47-Judas(original mix).mp3": "/react_project/static/media/Orex47-Judas(original mix).d2d930ea0a5360262cf5.mp3",
     "static/media/Orex47-Down.mp3": "/react_project/static/media/Orex47-Down.5beb799471bc9765f9bf.mp3",
@@ -17,14 +17,14 @@
     "static/media/Orex47-Dark.mp3": "/react_project/static/media/Orex47-Dark.82f71c437f12857ad967.mp3",
     "static/media/music_pad.png": "/react_project/static/media/music_pad.71b03191832245e95211.png",
     "index.html": "/react_project/index.html",
-    "static/media/lupa.svg": "/react_project/static/media/lupa.b97b2a7ac042db6092efc57544a27245.svg",
+    "static/media/lupa.svg": "/react_project/static/media/lupa.4d7a62a781c5bd32621f8d5bd9aa8b8f.svg",
     "static/media/logo.svg": "/react_project/static/media/logo.dc139be73b700aa6da56f57eee2e4cbe.svg",
     "main.73fb4eab.css.map": "/react_project/static/css/main.73fb4eab.css.map",
-    "main.fb2cc431.js.map": "/react_project/static/js/main.fb2cc431.js.map",
+    "main.be4a1ee5.js.map": "/react_project/static/js/main.be4a1ee5.js.map",
     "845.d21fc75c.chunk.js.map": "/react_project/static/js/845.d21fc75c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.73fb4eab.css",
-    "static/js/main.fb2cc431.js"
+    "static/js/main.be4a1ee5.js"
   ]
 }
