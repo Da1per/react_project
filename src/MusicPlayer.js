@@ -85,7 +85,7 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
   
   
   useEffect(() => {
-    if(musciNowFor[3]){
+    if(nameSus1){
       if(isPlaying){
         setTimeout(() => { 
           playingButton()
@@ -98,7 +98,7 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
           setSus(true)
         },500); 
       }
-      musciNowFor[3]=false
+     
       if(sus){
         playingButton()
         setSus(false)
@@ -106,7 +106,7 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
     
       console.log(sus)
     }
-  })
+  },[nameSus1])
 
   return (
     <div className="player" >

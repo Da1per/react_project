@@ -124,7 +124,7 @@ function PlayList({name,musSet}) {
       setCurrSus(false)
     }
     else setCurrSus(true)
-    musSet([playList[l].src,playList[l].name_Track,playList[l].creator,true,setCurrSus])
+    musSet([playList[l].src,playList[l].name_Track,playList[l].creator,currSus,setCurrSus])
     setCurrNum(l)
     console.log(currSus)
   }
