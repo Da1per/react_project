@@ -1,7 +1,7 @@
 
 const New_artist =()=> {
         return (
-            <div >
+            <div className="body_ld">
                 hello 22
 
             </div>

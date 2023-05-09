@@ -56,7 +56,7 @@ class Header extends React.Component {
             <button className='Singup' href="Sing_up" onClick={this.regFormAc}>Sing up</button>
             <button className='Log_in_botton' onClick={this.popUpActive}>LogIn</button>
           </div>
-            <button className='Lupa_button'>
+            <button className='Lupa_button' onClick={()=>{}}>
               <img className='Lupa' src={lupa} alt="Search logo" />
             </button>
         </div>

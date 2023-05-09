@@ -2,6 +2,8 @@ import './css/PlayList.sass';
 import { useEffect, useState } from "react";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { IconContext } from "react-icons";
+
+// array musics
 const playList = [{
   name_Track: "Orex47-Judas(original mix)",
   creator: "Orex47",
@@ -119,15 +121,21 @@ function PlayList({name,musSet}) {
   let el=[]
   const [currSus, setCurrSus] = useState(true);
   const [currNum, setCurrNum] = useState();
+
+  // add music in player
   const add=(l)=>{
     if(currSus){
       setCurrSus(false)
+      musSet([playList[l].src,playList[l].name_Track,playList[l].creator,currSus,setCurrSus])
+      setCurrNum(l)
     }
-    else setCurrSus(true)
-    musSet([playList[l].src,playList[l].name_Track,playList[l].creator,currSus,setCurrSus])
-    setCurrNum(l)
+    else{ setCurrSus(true)
+      musSet([playList[l].src,playList[l].name_Track,playList[l].creator,currSus,setCurrSus])
+      setCurrNum(l)}
     console.log(currSus)
   }
+
+  // Cycle for add blocks with music and buttom play
   for(let i=0;i<playList.length;i++){
     el.push(
     <div className='playlist_list_block'> 
@@ -145,6 +153,7 @@ function PlayList({name,musSet}) {
       </button>
     </div>)
   }
+
   return (
     <div className="playList">
       <div className='playlist_header'>
@@ -162,39 +171,6 @@ function PlayList({name,musSet}) {
     </div>
   );
   }
+
   export default PlayList;
   
-/* import React from 'react';
-class PlayList extends React.Component {  
-  constructor(props) {
-    super(props);
-  }
-  cycle(){
-    let el=[]
-    for(let i=0;i<props.num;i++){
-      el.push(
-      <div className='playlist_list_block'> 
-        <button className='playlist_button'></button>
-      </div>)
-    }
-  }
-  render(){
-    return (
-      <div className="playList">
-        <div className='playlist_header'>
-          <div className='playlist_header_block'>
-            <h2 className='playlist_header_h2'>{props.name}</h2>
-            <div className='playlist_header_line'></div>
-          </div>
-          <div className='playlist_header_expand'>
-            <div className='link'>expand</div>
-          </div>
-        </div>
-        <div className='playlist_list'>
-          {el}
-        </div>
-      </div>
-    );
-  } 
-}
-export default PlayList; */

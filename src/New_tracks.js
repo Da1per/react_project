@@ -1,7 +1,7 @@
 
 const New_tracks =()=> {
         return (
-            <div >
+            <div className="body_ld">
                 hello 33
 
             </div>

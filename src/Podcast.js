@@ -1,7 +1,7 @@
 
 const Podcast =()=> {
         return (
-            <div >
+            <div className="body_ld">
                 hello 44
 
             </div>

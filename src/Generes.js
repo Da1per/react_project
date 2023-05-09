@@ -1,12 +1,9 @@
 import './css/Generes.sass';
 const Generes =()=> {
         return (
-            <div >
+            <div className='body_ld'>
                 hello
-
             </div>
         )
-         
     }
-
   export default Generes;

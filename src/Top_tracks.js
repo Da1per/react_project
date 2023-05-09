@@ -1,7 +1,7 @@
 
 const Top_tracks =()=> {
         return (
-            <div >
+            <div className="body_ld">
                 hello 55
 
             </div>

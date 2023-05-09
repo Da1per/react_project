@@ -16,7 +16,7 @@ const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
 
 let curMus='/react_project/static/media/Orex47-Judas(original mix).d2d930ea0a5360262cf5.mp3'
 let newMus=''
-
+let nameMus="Orex47-Judas(original mix)"
 
 
 
@@ -36,23 +36,10 @@ let newMus=''
   });
   const [seconds, setSeconds] = useState();
 
- 
-  let nameMus="Orex47-Judas(original mix)"
-  let nameAut="Orex47"
-  let nameSus1 =''
-  let nameSus2 =''
-/*
-  if(musciNowFor[0]==curMus){
-    curMus=musciNowFor[0]
-    nameMus=musciNowFor[1]
-    nameAut=musciNowFor[2]
-    nameSus1=musciNowFor[3]
-    nameSus2=musciNowFor[4]
-  }
-*/
-    nameSus1=musciNowFor[3]
-    nameSus2=musciNowFor[4]
-  const [sus, setSus] = useState();
+
+
+  let nameSus1=musciNowFor[3]
+  let  nameSus2=musciNowFor[4]
 
 
 
@@ -93,59 +80,48 @@ let newMus=''
   const playingButton = () => {
     if (isPlaying) {
       pause();
-      nameSus2(true)
-      setIsPlaying(false);
-    } else {
+      if(nameSus2!==undefined)nameSus2(true)
+      setIsPlaying(false);} 
+    else {
       play();
       setIsPlaying(true);
-      nameSus2(false)
-    }
-  };
-useEffect(() => {
-    if(nameSus1){
-        playingButton()
-        
-    }
-    else{
-        pause()
-        setIsPlaying(false)
-    }
-},[nameSus1])
+      if(nameSus2!==undefined)nameSus2(false)
+    }}
 
-useEffect(() => {
+    useEffect(() => {
+      if(newMus==curMus){
+        
+        if(!isPlaying && nameSus1){
+          /* playingButton() */
+          
+          console.log(sound.noAudio)
+          console.log(isPlaying,nameSus1,curMus)
+          /* playingButton()  */
+        }
+      } 
+    })
 
-    if(newMus!=curMus){
-        pause()
-        setIsPlaying(false)
-        curMus=newMus
-        
-        
-}},[nameSus1])
-  /*
   useEffect(() => {
-    if(nameSus1){
-      if(isPlaying){
-        setTimeout(() => { 
-          playingButton()
-        },500);  
-        setSus(true)
+      if(nameSus1){
+          playingButton() 
       }
       else{
-        setTimeout(() => { 
-           playingButton() 
-          setSus(true)
-        },500); 
+          pause()
+          setIsPlaying(false)
       }
-     
-      if(sus){
-        playingButton()
-        setSus(false)
-      }
-    
-      console.log(sus)
-    }
   },[nameSus1])
-*/
+
+  useEffect(() => {
+      if(newMus!=curMus){
+          pause()
+          setIsPlaying(false)
+          curMus=newMus
+          nameMus=musciNowFor[1]
+          if(nameSus2!==undefined)nameSus2(true)
+      } 
+      
+    },[nameSus1])
+
   return (
     <div className="player" >
       
