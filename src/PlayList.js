@@ -121,7 +121,10 @@ function PlayList({name,musSet}) {
   let el=[]
   const [currSus, setCurrSus] = useState(true);
   const [currNum, setCurrNum] = useState();
-
+  const [currHover, setCurrHover] = useState({
+    curId:'',
+    currSus: false
+  });
   // add music in player
   const add=(l)=>{
     if(currSus){
@@ -141,19 +144,20 @@ function PlayList({name,musSet}) {
     <div className='playlist_list_block'> 
       <h3 className='playlist_list_block_mus'>{playList[i].name_Track}</h3>
       <p className='playlist_list_block_mus'>{playList[i].duration_fix}</p>
-      <button key={i} onClick={(e) => {add(i)}} className='playlist_button'>
+      <button onMouseLeave={()=>{setCurrHover(false)}} onMouseEnter={() => {setCurrHover({currId:i,currSus:true})}}  key={i} onClick={(e) => {add(i)}} className='playlist_button'>
       {(!currSus && currNum==i )? (
-            <IconContext.Provider value={{ size: "calc(10px + 3vw)", color: "#ffa2167e" }}>
+            <IconContext.Provider  value={{ size: "calc(18px + 3vw)", color: "#ce861a7e" }}>
               <AiFillPauseCircle />
             </IconContext.Provider>):(
-            <IconContext.Provider value={{ size: "calc(10px + 3vw)", color: "#ffa2167e" }}>
+            <IconContext.Provider value={(currHover&&currHover.currId==i)?{ size: "calc(15px + 3vw)", color: "#ffa2167e" }:{ size: "calc(10px + 3vw)", color: "#ffa2167e" }}>
               <AiFillPlayCircle />
             </IconContext.Provider>)
           }
       </button>
     </div>)
   }
-
+/*   onMouseLeave
+  onMouseEnter */
   return (
     <div className="playList">
       <div className='playlist_header'>
