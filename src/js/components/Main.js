@@ -1,4 +1,4 @@
-import './css/Main.sass';
+import '../../css/Main.sass';
 import Header from './Header';
 import Body from './Body';
 import React from 'react';

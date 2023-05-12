@@ -1,4 +1,4 @@
-import './css/Body.sass';
+import  '../../css/Body.sass'
 import LeftBar from './LeftBar';
 import BodyH from './BodyH';
 import React from 'react';
@@ -9,6 +9,7 @@ import New_tracks from './New_tracks'
 import Podcast from './Podcast'
 import MusicPlayer from './MusicPlayer';
 import {useState } from "react";
+
 function Body() {
   const [activeTabs, setActiveTabs] = useState({
     tab:"BodyH",

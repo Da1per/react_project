@@ -1,15 +1,16 @@
-import './css/MusicPlayer.sass';
+import '../../css/MusicPlayer.sass';
 import React from 'react';
  import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
+import { useSelector,useDispatch } from 'react-redux'
 
 function importAll(r) {
   return r.keys().map(r);
 }
-const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
+const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/));
 
 
 
@@ -23,6 +24,10 @@ let nameMus="Orex47-Judas(original mix)"
  function MusicPlayer({musciNowFor}) {
      newMus=musciNowFor[0]
      
+
+     const musOnOff = useSelector((state) => state.musicSlice.playerHiden)
+
+
      
   const [volumeButton, volumeButtonSet] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -122,9 +127,8 @@ let nameMus="Orex47-Judas(original mix)"
       
     },[nameSus1])
 
-  return (
+  return (!musOnOff)?(
     <div className="player" >
-      
       <div className='player_buttons'>
         <button className="music_paly_button_1">
           <IconContext.Provider value={{ size: "calc(5px + 1.5vw)", color: "#f0f0f0" }}>
@@ -198,14 +202,10 @@ let nameMus="Orex47-Judas(original mix)"
             onChange={event => {
               setVolume(event.target.valueAsNumber) 
           }}></input>):null}
-          
-        
-          
-        
       </div>
       </div>
     </div>
-  );
+  ):null
 }
  
 export default MusicPlayer;

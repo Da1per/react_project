@@ -1,4 +1,4 @@
-import './css/Generes.sass';
+import '../../css/Generes.sass';
 const Generes =()=> {
         return (
             <div className='body_ld'>
