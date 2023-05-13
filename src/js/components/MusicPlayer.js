@@ -6,6 +6,15 @@ import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
 import { useSelector,useDispatch } from 'react-redux'
+import   {
+  toPlayMusFromList,
+  toDelMus,
+  toPlayMus,
+  toSwithchMus
+} from "../reducers/musicSlice" 
+
+
+
 
 function importAll(r) {
   return r.keys().map(r);
@@ -15,19 +24,28 @@ const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/));
 
 
 
-let curMus='/react_project/static/media/Orex47-Judas(original mix).d2d930ea0a5360262cf5.mp3'
-let newMus=''
-let nameMus="Orex47-Judas(original mix)"
 
 
 
- function MusicPlayer({musciNowFor}) {
-     newMus=musciNowFor[0]
-     
-
-     const musOnOff = useSelector((state) => state.musicSlice.playerHiden)
+ function MusicPlayer() {
+    
 
 
+
+    const musicCur = useSelector((state) => state.musicSlice.curMus)
+    const musId = useSelector((state) => state.musicSlice.idMus)
+    const musPlay = useSelector((state) => state.musicSlice.isPlayMus) 
+    const handleChanged = (n) => {
+    dispatch(toPlayMus(n))
+  }
+    const dispatch = useDispatch()
+    const musOnOff = useSelector((state) => state.musicSlice.playerHiden)
+
+
+  
+  
+  
+  
      
   const [volumeButton, volumeButtonSet] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -40,20 +58,29 @@ let nameMus="Orex47-Judas(original mix)"
     sec: ""
   });
   const [seconds, setSeconds] = useState();
-
-
-
-  let nameSus1=musciNowFor[3]
-  let  nameSus2=musciNowFor[4]
-
-
-
-
   const [volume, setVolume] = React.useState(1);
-  const [play, { pause, duration, sound }] = useSound(curMus,{volume});
+  const [play, { pause, duration, sound }] = useSound(musicCur,{volume});
   
   
   
+  
+  
+  //music logic
+  /*
+  useEffect(()=>{
+  if (musPlay){
+    play();
+    setIsPlaying(true);
+  }
+  else{
+      pause()
+      setIsPlaying(false)} 
+  
+  },[musPlay])
+
+ */
+ 
+ 
   
   useEffect(() => {
     if (duration) {
@@ -66,7 +93,6 @@ let nameMus="Orex47-Judas(original mix)"
       });
     }
   }, [isPlaying]);
-
   useEffect(() => {
     const interval = setInterval(() => {
       if (sound) {
@@ -84,28 +110,58 @@ let nameMus="Orex47-Judas(original mix)"
   
   const playingButton = () => {
     if (isPlaying) {
-      pause();
-      if(nameSus2!==undefined)nameSus2(true)
-      setIsPlaying(false);} 
+      pause()
+      setIsPlaying(false);
+      handleChanged(false)}
     else {
       play();
       setIsPlaying(true);
-      if(nameSus2!==undefined)nameSus2(false)
-    }}
+      handleChanged(true)
+    }
+  }
+useEffect(()=>{
 
-    useEffect(() => {
+   if(musPlay) {
+       pause()
+    setTimeout(()=>{
+              play();
+      setIsPlaying(true);
+    
+    }, 800);
+    
+}
+      
+   
+   
+   else{
+      pause()
+          setTimeout(()=>{
+              pause()
+      setIsPlaying(false);
+    
+    }, 800);
+    
+      
+   }
+   
+},[musPlay])
+
+
+
+  /*  useEffect(() => {
       if(newMus==curMus){
         
         if(!isPlaying && nameSus1){
-          /* playingButton() */
+          
           
           console.log(sound.noAudio)
           console.log(isPlaying,nameSus1,curMus)
-          /* playingButton()  */
+          
         }
       } 
     })
-
+    */
+/*
   useEffect(() => {
       if(nameSus1){
           playingButton() 
@@ -126,8 +182,8 @@ let nameMus="Orex47-Judas(original mix)"
       } 
       
     },[nameSus1])
-
-  return (!musOnOff)?(
+*/
+  return (
     <div className="player" >
       <div className='player_buttons'>
         <button className="music_paly_button_1">
@@ -159,7 +215,8 @@ let nameMus="Orex47-Judas(original mix)"
         <div className='player_name'>
           <div className='player_fastString'>
           
-             <h2 className="player_title" >{nameMus}</h2>
+
+             <h2 className="player_title" ></h2>
              
           
           </div>
@@ -201,11 +258,11 @@ let nameMus="Orex47-Judas(original mix)"
             className="player_volume"
             onChange={event => {
               setVolume(event.target.valueAsNumber) 
-          }}></input>):null}
+          }}/>):null}
       </div>
       </div>
     </div>
-  ):null
+  )
 }
  
 export default MusicPlayer;

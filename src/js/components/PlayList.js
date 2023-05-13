@@ -6,7 +6,8 @@ import  {
   toPlayMusFromList,
   toDelMus,
   toPlayMus,
-  toSwithchMus
+  toSwithchMus,
+  toInicel
 } from "../reducers/musicSlice" 
 import { useSelector,useDispatch } from 'react-redux'
 
@@ -24,6 +25,10 @@ function PlayList() {
   const handleDel = () => {
     dispatch(toDelMus())
   }
+    
+
+  
+  
 
 
   const musId = useSelector((state) => state.musicSlice.idMus)
@@ -49,7 +54,12 @@ function PlayList() {
     } 
   console.log(musPlay)
 
-
+    const musInit =(num)=>{
+        if(!musPlay){
+            
+    dispatch(toInicel(num))}
+        
+    }
 
   const[currHover,setCurrHover] = useState(false)
   const [currSus, setCurrSus] = useState(true);
@@ -64,7 +74,7 @@ function PlayList() {
     <div className='playlist_list_block'> 
       <h3 className='playlist_list_block_mus'>{musList[i].name_Track}</h3>
       <p className='playlist_list_block_mus'>{musList[i].duration_fix}</p>
-      <button onMouseLeave={()=>{setCurrHover(false)}} onMouseEnter={() => {setCurrHover({currId:i,currSus:true})}} onClick={()=>{playMus(i)}}  key={i}  className='playlist_button'>
+      <button onMouseLeave={()=>{setCurrHover(false)}} onMouseEnter={() => {musInit(i);setCurrHover({currId:i,currSus:true})}} onClick={()=>{playMus(i)}}  key={i}  className='playlist_button'>
       {(musPlay && musId==i )? (
             <IconContext.Provider  value={{ size: "calc(18px + 3vw)", color: "#ce861a7e" }}>
               <AiFillPauseCircle />
