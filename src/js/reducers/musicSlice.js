@@ -137,8 +137,7 @@ const musicSlice = createSlice ({
     reducers:{
         toInicel(state,action){
             const musVal = action.payload
-            state.idMus = musVal
-            state.curMus = state.arrMus[musVal.src]
+            state.curMus = state.arrMus[musVal].src
         },
         toPlayMusFromList(state, action){
             const musVal = action.payload
@@ -161,6 +160,10 @@ const musicSlice = createSlice ({
         toSwithchMus(state, action){
             const play = action.payload
             state.afterIdMus = play
+        },
+        toForceSwithchMus(state, action){
+            const play = action.payload
+            state.idMus = play
         }
     }
 })
@@ -169,6 +172,7 @@ export const {
     toSwithchMus,
     toPlayMus,
     toDelMus,
-    toPlayMusFromList
+    toPlayMusFromList,
+    toForceSwithchMus
   } = musicSlice.actions
 export default musicSlice.reducer

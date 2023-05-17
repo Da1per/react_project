@@ -7,48 +7,33 @@ import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
 import { useSelector,useDispatch } from 'react-redux'
 import   {
-  toPlayMusFromList,
-  toDelMus,
   toPlayMus,
-  toSwithchMus
 } from "../reducers/musicSlice" 
 
 
-
-
-function importAll(r) {
+/* function importAll(r) {
   return r.keys().map(r);
 }
-const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/));
+const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/)); */
 
 
+function MusicPlayer() {
 
+  //текущая музыка
+  const musCur = useSelector((state) => state.musicSlice.curMus)
 
+  //состояние включения музыки 
+  const musPlay = useSelector((state) => state.musicSlice.isPlayMus) 
 
+  const dispatch = useDispatch()
 
-
- function MusicPlayer() {
-    
-
-
-
-    const musicCur = useSelector((state) => state.musicSlice.curMus)
-    const musId = useSelector((state) => state.musicSlice.idMus)
-    const musPlay = useSelector((state) => state.musicSlice.isPlayMus) 
-    const handleChanged = (n) => {
+  //функция управлением состоянием музыки
+  const handleChanged = (n) => {
     dispatch(toPlayMus(n))
   }
-    const dispatch = useDispatch()
-    const musOnOff = useSelector((state) => state.musicSlice.playerHiden)
-
-
-  
-  
-  
-  
-     
+  //состояние наводки на значек громкости
   const [volumeButton, volumeButtonSet] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+
   const [time, setTime] = useState({
     min: "",
     sec: ""
@@ -58,30 +43,12 @@ const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/));
     sec: ""
   });
   const [seconds, setSeconds] = useState();
+  //состояние громкости 
   const [volume, setVolume] = React.useState(1);
-  const [play, { pause, duration, sound }] = useSound(musicCur,{volume});
   
-  
-  
-  
-  
-  //music logic
-  /*
-  useEffect(()=>{
-  if (musPlay){
-    play();
-    setIsPlaying(true);
-  }
-  else{
-      pause()
-      setIsPlaying(false)} 
-  
-  },[musPlay])
+  const [play, { pause, duration, sound }] = useSound(musCur,{volume});
 
- */
- 
- 
-  
+
   useEffect(() => {
     if (duration) {
       const sec = duration / 1000;
@@ -92,7 +59,7 @@ const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/));
         sec: secRemain
       });
     }
-  }, [isPlaying]);
+  }, [musPlay]);
   useEffect(() => {
     const interval = setInterval(() => {
       if (sound) {
@@ -108,81 +75,38 @@ const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/));
     return () => clearInterval(interval);
   }, [sound]);
   
+  //кнопка включения и выключения музыки
   const playingButton = () => {
-    if (isPlaying) {
-      pause()
-      setIsPlaying(false);
+    if (musPlay) {
       handleChanged(false)}
     else {
-      play();
-      setIsPlaying(true);
       handleChanged(true)
     }
   }
-useEffect(()=>{
 
-   if(musPlay) {
-       pause()
-    setTimeout(()=>{
-              play();
-      setIsPlaying(true);
-    
-    }, 800);
-    
-}
-      
-   
-   
-   else{
-      pause()
-          setTimeout(()=>{
-              pause()
-      setIsPlaying(false);
-    
-    }, 800);
-    
-      
-   }
-   
-},[musPlay])
-
-
-
-  /*  useEffect(() => {
-      if(newMus==curMus){
-        
-        if(!isPlaying && nameSus1){
-          
-          
-          console.log(sound.noAudio)
-          console.log(isPlaying,nameSus1,curMus)
-          
-        }
-      } 
-    })
-    */
-/*
-  useEffect(() => {
-      if(nameSus1){
-          playingButton() 
+  //проерка включения музыки 
+  useEffect(()=>{
+    if(musPlay) {
+      if(isNaN(currTime.sec)){
+        //если музыка не загркзилась то ждем 1с
+        setTimeout(() => {
+          play();
+          handleChanged(true)
+        }, 1000);
       }
       else{
-          pause()
-          setIsPlaying(false)
+        play();
+        handleChanged(true)
       }
-  },[nameSus1])
+  }
+    else{
+        pause()
+        handleChanged(false);
+    }
+  },[musPlay,sound])
 
-  useEffect(() => {
-      if(newMus!=curMus){
-          pause()
-          setIsPlaying(false)
-          curMus=newMus
-          nameMus=musciNowFor[1]
-          if(nameSus2!==undefined)nameSus2(true)
-      } 
-      
-    },[nameSus1])
-*/
+
+
   return (
     <div className="player" >
       <div className='player_buttons'>
@@ -191,7 +115,7 @@ useEffect(()=>{
             <BiSkipPrevious />
           </IconContext.Provider>
         </button>
-        {!isPlaying ? (
+        {!musPlay ? (
           <button className="music_paly_button_3" onClick={playingButton}>
             <div className='music_paly_button_3_treug'>
               <i class="fa-solid fa-play fa-2xl"></i>

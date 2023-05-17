@@ -7,7 +7,8 @@ import  {
   toDelMus,
   toPlayMus,
   toSwithchMus,
-  toInicel
+  toInicel,
+  toForceSwithchMus
 } from "../reducers/musicSlice" 
 import { useSelector,useDispatch } from 'react-redux'
 
@@ -19,53 +20,37 @@ function PlayList() {
 
   const dispatch = useDispatch()
 
-  const handleChanged = () => {
-    dispatch(toPlayMusFromList(0))
-  }
   const handleDel = () => {
     dispatch(toDelMus())
   }
-    
-
-  
-  
-
-
   const musId = useSelector((state) => state.musicSlice.idMus)
   const afterMusId = useSelector((state) => state.musicSlice.afterIdMus)
   const musPlay = useSelector((state) => state.musicSlice.isPlayMus)
   const musList = useSelector((state) => state.musicSlice.arrMus)
   const playerHiden = useSelector((state) => state.musicSlice.playerHiden)
-
+  const[currHover,setCurrHover] = useState(false)
+  let el=[]
 
   const playMus = (num) =>{
-
     if (!musPlay){
-      dispatch(toPlayMusFromList([num,true]))
-      dispatch(toSwithchMus(num))
+      dispatch(toPlayMus(true))
+      /* dispatch(toPlayMusFromList([num,true])) */
+      dispatch(toForceSwithchMus(num))
+
     }
     else {
       dispatch(toPlayMusFromList([num,false]))
     }
   }
-   if(!(musId==afterMusId)){
-      dispatch(toPlayMusFromList([musId,true]))
-      dispatch(toSwithchMus(musId))
-    } 
-  console.log(musPlay)
-
-    const musInit =(num)=>{
-        if(!musPlay){
-            
-    dispatch(toInicel(num))}
-        
-    }
-
-  const[currHover,setCurrHover] = useState(false)
-  const [currSus, setCurrSus] = useState(true);
-  const [currNum, setCurrNum] = useState();
-
-  let el=[]
+  if(!(musId==afterMusId)){
+    dispatch(toPlayMusFromList([musId,false]))
+    setTimeout(() => {
+      dispatch(toPlayMus(true))
+    }, 200);  
+    dispatch(toSwithchMus(musId))
+    
+  } 
+ 
 
 
   // Cycle for add blocks with music and buttom play
@@ -74,7 +59,7 @@ function PlayList() {
     <div className='playlist_list_block'> 
       <h3 className='playlist_list_block_mus'>{musList[i].name_Track}</h3>
       <p className='playlist_list_block_mus'>{musList[i].duration_fix}</p>
-      <button onMouseLeave={()=>{setCurrHover(false)}} onMouseEnter={() => {musInit(i);setCurrHover({currId:i,currSus:true})}} onClick={()=>{playMus(i)}}  key={i}  className='playlist_button'>
+      <button onMouseLeave={()=>{setCurrHover(false)}} onMouseEnter={() => {setCurrHover({currId:i,currSus:true})}} onClick={()=>{playMus(i)}}  key={i}  className='playlist_button'>
       {(musPlay && musId==i )? (
             <IconContext.Provider  value={{ size: "calc(18px + 3vw)", color: "#ce861a7e" }}>
               <AiFillPauseCircle />
