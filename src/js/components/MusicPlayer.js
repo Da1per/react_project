@@ -4,7 +4,11 @@ import React from 'react';
 import useSound from "use-sound";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
+import { styled } from '@mui/material/styles';
 import { IconContext } from "react-icons";
+import PlayerVolumeSlider from "./PlayerVolumeSlider"
 import { useSelector,useDispatch } from 'react-redux'
 import   {
   toPlayMus,
@@ -18,7 +22,7 @@ const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/));
 
 
 function MusicPlayer() {
-
+  
   //текущая музыка
   const musCur = useSelector((state) => state.musicSlice.curMus)
 
@@ -172,17 +176,7 @@ function MusicPlayer() {
         <button className='volume_control_button' onMouseEnter={() => {volumeButtonSet(true)}}>
         <i class="fa-solid fa-volume-low fa-2xl"></i>
           </button>
-        {(volumeButton)?(<input  
-            min="0" 
-            max="1" 
-            value={volume}  
-            step={0.02} 
-            default="1" 
-            type="range"  
-            className="player_volume"
-            onChange={event => {
-              setVolume(event.target.valueAsNumber) 
-          }}/>):null}
+        {(volumeButton)?(<PlayerVolumeSlider value={volume}/>):null}
       </div>
       </div>
     </div>
