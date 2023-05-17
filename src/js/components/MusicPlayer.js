@@ -1,31 +1,39 @@
-import './css/MusicPlayer.sass';
+import '../../css/MusicPlayer.sass';
 import React from 'react';
  import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
+import { useSelector,useDispatch } from 'react-redux'
+import   {
+  toPlayMus,
+} from "../reducers/musicSlice" 
 
-function importAll(r) {
+
+/* function importAll(r) {
   return r.keys().map(r);
 }
-const musics = importAll(require.context('./music', false, /\.(mp3|wav)$/));
+const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/)); */
 
 
+function MusicPlayer() {
 
+  //текущая музыка
+  const musCur = useSelector((state) => state.musicSlice.curMus)
 
-let curMus='/react_project/static/media/Orex47-Judas(original mix).d2d930ea0a5360262cf5.mp3'
-let newMus=''
-let nameMus="Orex47-Judas(original mix)"
+  //состояние включения музыки 
+  const musPlay = useSelector((state) => state.musicSlice.isPlayMus) 
 
+  const dispatch = useDispatch()
 
-
- function MusicPlayer({musciNowFor}) {
-     newMus=musciNowFor[0]
-     
-     
+  //функция управлением состоянием музыки
+  const handleChanged = (n) => {
+    dispatch(toPlayMus(n))
+  }
+  //состояние наводки на значек громкости
   const [volumeButton, volumeButtonSet] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+
   const [time, setTime] = useState({
     min: "",
     sec: ""
@@ -35,21 +43,12 @@ let nameMus="Orex47-Judas(original mix)"
     sec: ""
   });
   const [seconds, setSeconds] = useState();
-
-
-
-  let nameSus1=musciNowFor[3]
-  let  nameSus2=musciNowFor[4]
-
-
-
-
+  //состояние громкости 
   const [volume, setVolume] = React.useState(1);
-  const [play, { pause, duration, sound }] = useSound(curMus,{volume});
   
-  
-  
-  
+  const [play, { pause, duration, sound }] = useSound(musCur,{volume});
+
+
   useEffect(() => {
     if (duration) {
       const sec = duration / 1000;
@@ -60,8 +59,7 @@ let nameMus="Orex47-Judas(original mix)"
         sec: secRemain
       });
     }
-  }, [isPlaying]);
-
+  }, [musPlay]);
   useEffect(() => {
     const interval = setInterval(() => {
       if (sound) {
@@ -77,61 +75,47 @@ let nameMus="Orex47-Judas(original mix)"
     return () => clearInterval(interval);
   }, [sound]);
   
+  //кнопка включения и выключения музыки
   const playingButton = () => {
-    if (isPlaying) {
-      pause();
-      if(nameSus2!==undefined)nameSus2(true)
-      setIsPlaying(false);} 
+    if (musPlay) {
+      handleChanged(false)}
     else {
-      play();
-      setIsPlaying(true);
-      if(nameSus2!==undefined)nameSus2(false)
-    }}
+      handleChanged(true)
+    }
+  }
 
-    useEffect(() => {
-      if(newMus==curMus){
-        
-        if(!isPlaying && nameSus1){
-          /* playingButton() */
-          
-          console.log(sound.noAudio)
-          console.log(isPlaying,nameSus1,curMus)
-          /* playingButton()  */
-        }
-      } 
-    })
-
-  useEffect(() => {
-      if(nameSus1){
-          playingButton() 
+  //проерка включения музыки 
+  useEffect(()=>{
+    if(musPlay) {
+      if(isNaN(currTime.sec)){
+        //если музыка не загркзилась то ждем 1с
+        setTimeout(() => {
+          play();
+          handleChanged(true)
+        }, 1000);
       }
       else{
-          pause()
-          setIsPlaying(false)
+        play();
+        handleChanged(true)
       }
-  },[nameSus1])
+  }
+    else{
+        pause()
+        handleChanged(false);
+    }
+  },[musPlay,sound])
 
-  useEffect(() => {
-      if(newMus!=curMus){
-          pause()
-          setIsPlaying(false)
-          curMus=newMus
-          nameMus=musciNowFor[1]
-          if(nameSus2!==undefined)nameSus2(true)
-      } 
-      
-    },[nameSus1])
+
 
   return (
     <div className="player" >
-      
       <div className='player_buttons'>
         <button className="music_paly_button_1">
           <IconContext.Provider value={{ size: "calc(5px + 1.5vw)", color: "#f0f0f0" }}>
             <BiSkipPrevious />
           </IconContext.Provider>
         </button>
-        {!isPlaying ? (
+        {!musPlay ? (
           <button className="music_paly_button_3" onClick={playingButton}>
             <div className='music_paly_button_3_treug'>
               <i class="fa-solid fa-play fa-2xl"></i>
@@ -155,7 +139,8 @@ let nameMus="Orex47-Judas(original mix)"
         <div className='player_name'>
           <div className='player_fastString'>
           
-             <h2 className="player_title" >{nameMus}</h2>
+
+             <h2 className="player_title" ></h2>
              
           
           </div>
@@ -197,15 +182,11 @@ let nameMus="Orex47-Judas(original mix)"
             className="player_volume"
             onChange={event => {
               setVolume(event.target.valueAsNumber) 
-          }}></input>):null}
-          
-        
-          
-        
+          }}/>):null}
       </div>
       </div>
     </div>
-  );
+  )
 }
  
 export default MusicPlayer;

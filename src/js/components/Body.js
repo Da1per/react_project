@@ -1,4 +1,4 @@
-import './css/Body.sass';
+import  '../../css/Body.sass'
 import LeftBar from './LeftBar';
 import BodyH from './BodyH';
 import React from 'react';
@@ -9,7 +9,12 @@ import New_tracks from './New_tracks'
 import Podcast from './Podcast'
 import MusicPlayer from './MusicPlayer';
 import {useState } from "react";
+import { useSelector,useDispatch } from 'react-redux'
+
 function Body() {
+    
+    const musOnOff = useSelector((state) => state.musicSlice.playerHiden)
+
   const [activeTabs, setActiveTabs] = useState({
     tab:"BodyH",
   });
@@ -41,7 +46,8 @@ function Body() {
       {(activeTabs.tab=="Top_tracks")?<Top_tracks/>:null}
       {(activeTabs.tab=="Podcast")?<Podcast/>:null}
       {(activeTabs.tab=="New_tracks")?<New_tracks/>:null}
-      <MusicPlayer musciNowFor={currentMusic.musics} setMus={activeMusicList} openMus={setOpenMus}/>
+    {(!musOnOff)?(<MusicPlayer musciNowFor={currentMusic.musics} setMus={activeMusicList} openMus={setOpenMus}/>
+    ):null}
     </div>
   );
 }

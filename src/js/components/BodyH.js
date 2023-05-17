@@ -1,6 +1,6 @@
-import './css/BodyH.sass';
+import '../../css/BodyH.sass';
 import PlayList from './PlayList';
-import musicPad from './images/music_pad.png'
+import musicPad from '../../images/music_pad.png'
 import React from 'react';
 function BodyH ({musicsFor,musciNow}) {
   return (
