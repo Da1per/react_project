@@ -12,14 +12,8 @@ import  {
 } from "../reducers/musicSlice" 
 import { useSelector,useDispatch } from 'react-redux'
 
-
-
-
-
 function PlayList() {
-
   const dispatch = useDispatch()
-
   const handleDel = () => {
     dispatch(toDelMus())
   }
@@ -27,14 +21,11 @@ function PlayList() {
   const afterMusId = useSelector((state) => state.musicSlice.afterIdMus)
   const musPlay = useSelector((state) => state.musicSlice.isPlayMus)
   const musList = useSelector((state) => state.musicSlice.arrMus)
-  const playerHiden = useSelector((state) => state.musicSlice.playerHiden)
   const[currHover,setCurrHover] = useState(false)
   let el=[]
-
   const playMus = (num) =>{
     if (!musPlay){
       dispatch(toPlayMus(true))
-      /* dispatch(toPlayMusFromList([num,true])) */
       dispatch(toForceSwithchMus(num))
 
     }
@@ -51,8 +42,6 @@ function PlayList() {
     
   } 
  
-
-
   // Cycle for add blocks with music and buttom play
   for(let i=0;i<musList.length;i++){
     el.push(
@@ -71,7 +60,6 @@ function PlayList() {
       </button>
     </div>)
   }
-
   return (
     <div className="playlist">
       <div className='playlist_header'>
@@ -90,6 +78,5 @@ function PlayList() {
     </div>
   );
   }
-
   export default PlayList;
   

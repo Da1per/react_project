@@ -130,7 +130,6 @@ const initialState = {
     playerHiden:true
     
 }
-
 const musicSlice = createSlice ({
     name: 'musics',
     initialState,
