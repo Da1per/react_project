@@ -1,30 +1,18 @@
 {
   "files": {
     "main.css": "/react_project/static/css/main.61d077f1.css",
-    "main.js": "/react_project/static/js/main.9bccc254.js",
+    "main.js": "/react_project/static/js/main.e8e2936b.js",
     "static/js/845.d21fc75c.chunk.js": "/react_project/static/js/845.d21fc75c.chunk.js",
-    "static/media/Orex47-Judas(original mix).mp3": "/react_project/static/media/Orex47-Judas(original mix).d2d930ea0a5360262cf5.mp3",
-    "static/media/Orex47-Down.mp3": "/react_project/static/media/Orex47-Down.5beb799471bc9765f9bf.mp3",
-    "static/media/Orex47- Get riz.mp3": "/react_project/static/media/Orex47- Get riz.8b1dff297bb43bf7d2fa.mp3",
-    "static/media/Orex47- Root fl.mp3": "/react_project/static/media/Orex47- Root fl.85b81230607bc1d0aa27.mp3",
-    "static/media/Orex47-Space ship.mp3": "/react_project/static/media/Orex47-Space ship.36a9d6675e7d8dbe9a2e.mp3",
-    "static/media/Orex47-Comming.mp3": "/react_project/static/media/Orex47-Comming.a72e72450ab832e019cb.mp3",
-    "static/media/Orex47-Blow back.mp3": "/react_project/static/media/Orex47-Blow back.cb7e1bedd30d73e5cd0e.mp3",
-    "static/media/sound1.wav": "/react_project/static/media/sound1.c445dfdcd2417a0e7491.wav",
-    "static/media/Orex47-Goddil.mp3": "/react_project/static/media/Orex47-Goddil.3ee7e3e93d62e599b816.mp3",
-    "static/media/Orex47-Cyber pool.mp3": "/react_project/static/media/Orex47-Cyber pool.287dd47afb3e47a0bd44.mp3",
-    "static/media/Orex47-Alisher Sas.mp3": "/react_project/static/media/Orex47-Alisher Sas.4b9becfb499ae3ace19c.mp3",
-    "static/media/Orex47-Dark.mp3": "/react_project/static/media/Orex47-Dark.82f71c437f12857ad967.mp3",
     "static/media/music_pad.png": "/react_project/static/media/music_pad.71b03191832245e95211.png",
     "index.html": "/react_project/index.html",
-    "static/media/lupa.svg": "/react_project/static/media/lupa.4d7a62a781c5bd32621f8d5bd9aa8b8f.svg",
+    "static/media/lupa.svg": "/react_project/static/media/lupa.b97b2a7ac042db6092efc57544a27245.svg",
     "static/media/logo.svg": "/react_project/static/media/logo.dc139be73b700aa6da56f57eee2e4cbe.svg",
     "main.61d077f1.css.map": "/react_project/static/css/main.61d077f1.css.map",
-    "main.9bccc254.js.map": "/react_project/static/js/main.9bccc254.js.map",
+    "main.e8e2936b.js.map": "/react_project/static/js/main.e8e2936b.js.map",
     "845.d21fc75c.chunk.js.map": "/react_project/static/js/845.d21fc75c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.61d077f1.css",
-    "static/js/main.9bccc254.js"
+    "static/js/main.e8e2936b.js"
   ]
 }
