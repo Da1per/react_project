@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+console.log('dfgdfg')
 const initialState = {
     arrMus: [
         {   

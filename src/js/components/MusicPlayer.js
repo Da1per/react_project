@@ -15,10 +15,10 @@ import   {
 } from "../reducers/musicSlice" 
 
 
-/* function importAll(r) {
+function importAll(r) {
   return r.keys().map(r);
 }
-const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/)); */
+const musics = importAll(require.context('../../music', false, /\.(mp3|wav)$/));
 
 
 function MusicPlayer() {
