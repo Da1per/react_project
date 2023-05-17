@@ -71,8 +71,16 @@ const IOSSlider = styled(Slider)(({ theme }) => ({
     },
   }));
 
-const PlayerVolumeSlider = (value) => {
+const PlayerVolumeSlider = (value1) => {
+
+    const [value, setValue] = React.useState(30);
+    value1 = value 
+    const handleSliderChange = (event, newValue) => {
+    setValue(newValue);
+  };
     return (
+
+        
         <div>
             <Box sx={{ height: 400 , position:"absolute"}} >
         <IOSSlider
@@ -89,11 +97,12 @@ const PlayerVolumeSlider = (value) => {
         }}
         orientation="vertical"
         defaultValue={100}
+        step={1}
         value={value}
         aria-label="Temperature"
         valueLabelDisplay="auto"
         color="secondary"
-        
+        onChange={handleSliderChange}
         
       />
       </Box>
