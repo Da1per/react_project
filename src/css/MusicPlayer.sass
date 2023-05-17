@@ -130,7 +130,7 @@
     
     margin-right: 10% 
     font-size: calc(5px + 0.9vw) 
-    color: #f0f0f0 
+    color: #fff2f2 
     margin: 0
     animation: text 10s infinite linear
     padding-left:100%
@@ -138,21 +138,49 @@
   
 
 .player_volume
-    position: fixed
-    color: #ffffff00 
+    
+    
     width: calc(50px + 4vw) 
     width: 100px
     height: 115px
     margin-top: -117px
     margin-left: -69px
     
+    position: absolute
+    
     -webkit-appearance: slider-vertical
-  
-   
+    
+    
+    
+    
+    
+    
+
+.player_volume::-webkit-slider-thumb 
+    -webkit-appearance: slider-vertical
+    appearance: none
+    
+    width: 25px
+    height: 25px
+    background: #4CAF50
+    cursor: pointer
+    
+
+
+
+
+
+
+
+
+
+
+
+
 .volume_control
    
     
-
+   
 
 .volume_control_button
     width: 40px
