@@ -71,7 +71,6 @@ function PlayList() {
           <div className='link'>expand</div>
         </div>
       </div>
-      <button onClick={()=>{handleDel()}}>==DEL==</button> 
       <div className='playlist_list'>
         {el}
       </div>
