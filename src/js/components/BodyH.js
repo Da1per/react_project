@@ -2,7 +2,7 @@ import '../../css/BodyH.sass';
 import PlayList from './PlayList';
 import musicPad from '../../images/music_pad.png'
 import React from 'react';
-function BodyH ({musicsFor,musciNow}) {
+function BodyH ({musciNow}) {
   return (
     <div className="body_h">
         <div className='body_h_header'>
