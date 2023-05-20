@@ -66,8 +66,8 @@ const IOSSlider = styled(Slider)(({  theme  }) => ({
     },
   }));
   export default function PlayerVolumeSlider(props){
-    const [value, setValue] = React.useState(1);
-    const valChange = props.setSus
+    const valChange = props.setVol
+    const vol = props.vol
 
 
     const handleSliderChange = (event, newValue) => {
