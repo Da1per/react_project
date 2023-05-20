@@ -66,12 +66,11 @@ const IOSSlider = styled(Slider)(({ theme }) => ({
       },
     },
   }));
-
-const PlayerVolumeSlider = (value1) => {
-
-    const [value, setValue] = React.useState(30);
-    value1 = value 
+  export default function PlayerVolumeSlider(props){
+    const [value, setValue] = React.useState(1);
+    const valChange = props.setSus
     const handleSliderChange = (event, newValue) => {
+    setValue(newValue);
     valChange(newValue)
   };
     return (
@@ -89,7 +88,7 @@ const PlayerVolumeSlider = (value1) => {
                 max={1}
                 orientation="vertical"
                 step={0.01}
-                value={vol}
+                value={value}
                 aria-label="Temperature"
                 valueLabelDisplay="auto"
                 color="secondary"

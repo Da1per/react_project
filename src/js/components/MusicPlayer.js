@@ -51,11 +51,10 @@ function MusicPlayer() {
   const [volume, setVolume] = React.useState(1);
   
   const [play, { pause, duration, sound }] = useSound(musCur,{volume});
-  let volume1 = 100
-  useEffect(() => {setTimeout(() => {
-    setVolume ()
-    
-  }, 100);},[volume])
+  let volume1 =(val)=>{
+    setVolume(val)
+  }
+  
   useEffect(() => {
     if (duration) {
       const sec = duration / 1000;
@@ -184,7 +183,7 @@ function MusicPlayer() {
         <button className='volume_control_button' onMouseEnter={() => {volumeButtonSet(true)}}>
         <i class="fa-solid fa-volume-low fa-2xl"></i>
           </button>
-        {(volumeButton)?(<PlayerVolumeSlider value={volume1}/>):null}
+          {(volumeButton)?(<PlayerVolumeSlider setSus={volume1}/>):null}
       </div>
       </div>
     </div>
