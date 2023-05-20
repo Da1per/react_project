@@ -8,13 +8,16 @@ import Box from '@mui/material/Box';
 
 
 const IOSSlider = styled(Slider)(({ theme }) => ({
-    color: theme.palette.mode === 'dark' ? '#ff9505' : '#ff9505',
+    color: theme.palette.mode === 'dark' ? '#EA18FF' : '#EA18FF',
+    
     height: 50,
     width: 15,
     borderRadius: "none" ,
     padding: '10px 0',
     '& .MuiSlider-thumb': {
       borderRadius: '5px 5px 5px 5px',
+      
+      
       height: 5,
       width: 25,
       backgroundColor: '#fff',
@@ -32,7 +35,7 @@ const IOSSlider = styled(Slider)(({ theme }) => ({
       },
     },
     '& .MuiSlider-valueLabel': {
-        
+      
       fontSize: 12,
       fontWeight: 'normal',
       top: -6,
@@ -54,8 +57,8 @@ const IOSSlider = styled(Slider)(({ theme }) => ({
       
     },
     '& .MuiSlider-rail': {
-      opacity: 0.5,
-      backgroundColor: '#bfbfbf',
+      opacity: 5,
+      backgroundColor: '#FFFFFF',
       
     },
     '& .MuiSlider-mark': {
@@ -73,7 +76,7 @@ const IOSSlider = styled(Slider)(({ theme }) => ({
 
 const PlayerVolumeSlider = (value1) => {
 
-    const [value, setValue] = React.useState(30);
+    const [value, setValue] = React.useState(1);
     value1 = value 
     const handleSliderChange = (event, newValue) => {
     setValue(newValue);
