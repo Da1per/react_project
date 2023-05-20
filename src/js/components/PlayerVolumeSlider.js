@@ -7,7 +7,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
 
 
-const IOSSlider = styled(Slider)(({theme}) => ({
+const IOSSlider = styled(Slider)(({ theme }) => ({
     color: theme.palette.mode === 'dark' ? '#ff9505' : '#ff9505',
     height: 50,
     width: 15,
@@ -15,6 +15,8 @@ const IOSSlider = styled(Slider)(({theme}) => ({
     padding: '10px 0',
     '& .MuiSlider-thumb': {
       borderRadius: '5px 5px 5px 5px',
+      
+      
       height: 5,
       width: 25,
       backgroundColor: '#fff',
@@ -26,6 +28,7 @@ const IOSSlider = styled(Slider)(({theme}) => ({
       },
     },
     '& .MuiSlider-valueLabel': {
+        
       fontSize: 12,
       fontWeight: 'normal',
       top: -6,
@@ -47,8 +50,8 @@ const IOSSlider = styled(Slider)(({theme}) => ({
       
     },
     '& .MuiSlider-rail': {
-      opacity: 0.5,
-      backgroundColor: '#bfbfbf',
+      opacity: 5,
+      backgroundColor: '#FFFFFF',
       
     },
     '& .MuiSlider-mark': {
@@ -64,10 +67,10 @@ const IOSSlider = styled(Slider)(({theme}) => ({
     },
   }));
 
-export default function PlayerVolumeSlider(props){
-    const valChange = props.setSus
-    const vol = props.sus
-    console.log(vol)
+const PlayerVolumeSlider = (value1) => {
+
+    const [value, setValue] = React.useState(30);
+    value1 = value 
     const handleSliderChange = (event, newValue) => {
     valChange(newValue)
   };
