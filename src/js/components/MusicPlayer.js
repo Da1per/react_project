@@ -178,7 +178,7 @@ function MusicPlayer() {
         <button className='volume_control_button' onMouseEnter={() => {volumeButtonSet(true)}}>
         <i class="fa-solid fa-volume-low fa-2xl"></i>
           </button>
-        {(volumeButton)?(<PlayerVolumeSlider setSus={volume1}/>):null}
+        {(volumeButton)?(<PlayerVolumeSlider setSus={volume1} sus={volume}/>):null}
       </div>
       </div>
     </div>
