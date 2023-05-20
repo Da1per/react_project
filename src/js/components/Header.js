@@ -16,7 +16,6 @@ class Header extends React.Component {
     this.regFormAc = this.regFormAc.bind(this);
     this.regFormAc1 = this.regFormAc1.bind(this);
   }  
-
   regFormAc(){
     this.setState(prevState => {
       return {
