@@ -9,9 +9,17 @@ import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import { IconContext } from "react-icons";
 import PlayerVolumeSlider from "./PlayerVolumeSlider"
+import PlayerStatusSlider from './PlayerStatusSlider'
 import { useSelector,useDispatch } from 'react-redux'
+
+
 import   {
   toPlayMus,
+  toForceSwithchMus,
+  toSwithchMus,
+  toPlayMusFromList,
+  afterMusId
+  
 } from "../reducers/musicSlice" 
 
 
@@ -30,13 +38,71 @@ function MusicPlayer() {
   const musPlay = useSelector((state) => state.musicSlice.isPlayMus) 
 
   const dispatch = useDispatch()
-
+  const musid = useSelector((state) => state.musicSlice.idMus) 
+  
+  const afterMusId = useSelector((state) => state.musicSlice.afterIdMus)
+  const arrMus = useSelector((state) => state.musicSlice.arrMus)
+  
+  
+  
+  const musList = useSelector((state) => state.musicSlice.arrMus)
   //функция управлением состоянием музыки
   const handleChanged = (n) => {
     dispatch(toPlayMus(n))
   }
   //состояние наводки на значек громкости
   const [volumeButton, volumeButtonSet] = useState(false);
+
+  const nextButton = () => {
+    if(musid < arrMus.length -1 ){
+
+    
+    if (!musPlay){
+      dispatch(toPlayMus(true))
+      dispatch(toForceSwithchMus(musid + 1))
+
+    }
+    else {
+      dispatch(toPlayMusFromList([musid + 1,false]))
+    }
+
+  
+  if(!(musid==afterMusId)){
+    dispatch(toPlayMusFromList([musid,false]))
+    setTimeout(() => {
+      dispatch(toPlayMus(true))
+    }, 200);  
+    dispatch(toSwithchMus(musid))
+    
+  } 
+ }
+  
+  }
+  
+  const afterButton = () => {
+    if(musid > 0){
+
+    
+    if (!musPlay){
+      dispatch(toPlayMus(true))
+      dispatch(toForceSwithchMus(musid - 1))
+
+    }
+    else {
+      dispatch(toPlayMusFromList([musid - 1,false]))
+    }
+
+  }
+  if(!(musid==afterMusId)){
+    dispatch(toPlayMusFromList([musid,false]))
+    setTimeout(() => {
+      dispatch(toPlayMus(true))
+    }, 200);  
+    dispatch(toSwithchMus(musid))
+    
+  } 
+  }
+
 
   const [time, setTime] = useState({
     min: "",
@@ -55,6 +121,10 @@ function MusicPlayer() {
     setVolume(val)
   }
  
+  const statusCheck = (val) =>{
+    sound.seek([val])
+  }
+  
   useEffect(() => {
     if (duration) {
       const sec = duration / 1000;
@@ -119,7 +189,8 @@ function MusicPlayer() {
       
     <div className="player" >
       <div className='player_buttons'>
-        <button className="music_paly_button_1">
+        <button className="music_paly_button_1" onClick={afterButton} 
+        >
           <IconContext.Provider value={{ size: "calc(5px + 1.5vw)", color: "#f0f0f0" }}>
             <BiSkipPrevious />
           </IconContext.Provider>
@@ -138,7 +209,7 @@ function MusicPlayer() {
             </div>
           </button>
         )}
-        <button className="music_paly_button_1">
+        <button className="music_paly_button_1" onClick={nextButton}>
           <IconContext.Provider value={{ size: "calc(5px + 1.5vw)", color: "#f0f0f0" }}>
             <BiSkipNext />
           </IconContext.Provider>
@@ -155,19 +226,11 @@ function MusicPlayer() {
           </div>
         </div>
         <div className='player_status'>
-        <input
-            type="range"
-            min="0"
-            step='0.01'
-            max={duration / 1000}
-            default="0"
+           <PlayerStatusSlider val={seconds} maxi={duration/1000} fun = {statusCheck}/>
+
+      
             
-            value={seconds}
-            className="player_status_timeline"
-            onChange={(e) => {
-              sound.seek([e.target.value]);
-            }}
-          />
+          
           <div className="player_time">
             
             
